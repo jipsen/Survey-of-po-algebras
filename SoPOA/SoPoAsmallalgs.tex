@@ -1,0 +1,4562 @@
+
+\documentclass{amsart}
+% process this file with LuaLaTeX to avoid memory errors
+
+\usepackage{tikz}
+\usepackage{pythontex}
+\advance\textheight by 1.8in
+\advance\textwidth by 2in
+\advance\topmargin by -1in
+\advance\oddsidemargin by -1in
+\advance\evensidemargin by -1in
+\title{Lattices of size up to 6}
+\date{\today}
+
+\usepackage{calc}
+\newcommand{\g}{\textcolor{blue}}
+\newcommand{\rd}{\textcolor{red}}
+\newcommand{\m}{\rule[2pt]{3pt}{.5pt}\mkern1mu}
+\newcommand{\W}[1]{\makebox[12pt]{$#1$}}%
+
+\arraycolsep0pt
+\tikzstyle{every picture} = [scale=0.5,baseline=-16pt]
+\tikzstyle{every node} = [draw, fill=white, circle, inner sep=0pt, minimum size=5pt]
+\tikzstyle{n} = [draw=none, rectangle, inner sep=0pt] %name style
+\tikzstyle{i} = [draw, fill=black, circle, inner sep=0pt, minimum size=5pt] %idempotent
+\tikzstyle{e} = [draw=none, rectangle, inner sep=0pt]
+\tikzstyle{nci} = [draw, fill=black, rectangle, inner sep=0pt, minimum size=5pt]
+\tikzstyle{nc} = [draw, fill=white, rectangle, inner sep=0pt, minimum size=5pt]
+
+
+\begin{document}
+\maketitle
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{3,1}$};
+\node(2)at(1,0.5)[label=right:$c$]{};
+\node(1)at(0,1)[label=left:$b$]{};
+\node(0)at(0,0)[label=left:$a$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|ccc|}\hline
+\W{\cdot}&\W{c}&\W{b}&\W{a}\\\hline
+c&a&c&c\\
+b&\g{c}&\rd{b}&a\\
+a&\g{c}&\g{a}&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{3,1}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|ccc|}\hline
+\W{\cdot}&\W{c}&\W{b}&\W{a}\\\hline
+c&\rd{c}&c&c\\
+b&\g{c}&\rd{b}&a\\
+a&\g{c}&\g{a}&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{3,2}$
+\end{tabular}
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{4,1}$};
+\node(3)at(1,1)[label=right:$d$]{};
+\node(2)at(0,1)[label=left:$b$]{};
+\node(1)at(1,0)[label=right:$c$]{}edge(2)edge(3);
+\node(0)at(0,0)[label=left:$a$]{}edge(2)edge(3);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,1}$
+\end{tabular}
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{4,1}$};
+\node(3)at(1,1)[label=right:$d$]{};
+\node(2)at(0,1)[label=left:$b$]{};
+\node(1)at(1,0)[label=right:$c$]{}edge(2)edge(3);
+\node(0)at(0,0)[label=left:$a$]{}edge(2);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,1}$
+\end{tabular}
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{4,1}$};
+\node(3)at(1,1)[label=right:$d$]{};
+\node(2)at(0,1)[label=left:$b$]{};
+\node(1)at(1,0)[label=right:$c$]{}edge(3);
+\node(0)at(0,0)[label=left:$a$]{}edge(2);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&\rd{c}&a\\
+a&d&b&c&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,1}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&c\\
+b&\g{d}&\rd{b}&c&a\\
+c&b&d&a&c\\
+a&d&b&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&c\\
+b&\g{d}&\rd{b}&c&a\\
+c&b&d&a&c\\
+a&d&b&\g{c}&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,2}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&c&b&c&a\\
+b&c&\rd{b}&c&a\\
+c&\g{c}&b&\rd{c}&a\\
+a&c&b&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&d&a\\
+b&d&\rd{b}&d&a\\
+c&\g{d}&b&d&a\\
+a&d&b&d&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,3}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&c&\rd{b}&c&a\\
+c&\g{c}&b&\rd{c}&a\\
+a&c&b&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&d&a\\
+c&d&b&d&a\\
+a&d&b&d&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,4}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&c&a&c&a\\
+b&c&a&c&a\\
+c&\g{c}&a&\rd{c}&a\\
+a&c&\g{a}&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&d&b\\
+b&d&\rd{b}&d&b\\
+c&\g{d}&b&d&b\\
+a&d&\g{b}&d&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,5}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&a&c&a\\
+b&c&a&c&a\\
+c&\g{c}&a&\rd{c}&a\\
+a&c&\g{a}&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&b\\
+b&d&\rd{b}&d&b\\
+c&d&b&d&b\\
+a&d&\g{b}&d&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,6}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&c&a&c&a\\
+c&\g{c}&a&\rd{c}&a\\
+a&c&\g{a}&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&d&b\\
+c&d&b&d&b\\
+a&d&\g{b}&d&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,7}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&a&c&a&c\\
+b&\g{c}&a&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&b&d\\
+b&\g{d}&\rd{b}&d&b\\
+c&\g{b}&\g{d}&b&d\\
+a&\g{d}&\g{b}&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,8}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&c&a&c\\
+b&\g{c}&a&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&b&c\\
+b&\g{d}&\rd{b}&d&b\\
+c&\g{b}&\g{d}&b&d\\
+a&d&\g{b}&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,9}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&\g{c}&a&\rd{c}&a\\
+a&c&\g{a}&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&a\\
+b&d&\rd{b}&c&a\\
+c&d&b&d&b\\
+a&d&b&d&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,10}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&a&c&a&c\\
+b&d&\rd{b}&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&b&d\\
+b&\g{d}&\rd{b}&c&a\\
+c&\g{b}&d&b&d\\
+a&\g{d}&b&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,11}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&a&d&a&c\\
+b&\g{d}&\rd{b}&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&d\\
+b&\g{d}&\rd{b}&c&a\\
+c&b&d&b&d\\
+a&\g{d}&b&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,12}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&c\\
+b&\g{d}&\rd{b}&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&c\\
+b&\g{d}&\rd{b}&c&a\\
+c&b&d&b&d\\
+a&d&b&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,13}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&a&c&a\\
+b&c&\rd{b}&c&a\\
+c&\g{c}&a&\rd{c}&a\\
+a&c&\g{a}&c&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&\rd{d}&b&c&b\\
+b&d&\rd{b}&d&a\\
+c&d&b&d&b\\
+a&d&b&d&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,14}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&a&c&a&c\\
+b&\g{c}&\rd{b}&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&b&d\\
+b&\g{d}&\rd{b}&d&a\\
+c&\g{b}&\g{d}&b&d\\
+a&\g{d}&b&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,15}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccc|}\hline
+\W{\cdot}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&a&d&a&c\\
+b&c&\rd{b}&c&a\\
+c&\g{a}&\g{c}&a&c\\
+a&\g{c}&\g{a}&\g{c}&\rd{a}\\
+\hline
+\end{array}$$\begin{array}{|c|cccc|}\hline
+\W{\backslash}&\W{d}&\W{b}&\W{c}&\W{a}\\\hline
+d&b&d&a&d\\
+b&\g{d}&\rd{b}&d&a\\
+c&b&\g{d}&b&d\\
+a&\g{d}&b&\g{d}&b\\
+\hline
+\end{array}$\\
+$\mathbf{PoMon}_{4,16}$
+\end{tabular}
+
+
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{3,1}$};
+\node(2)at(1,0.5)[label=right:$c$]{};
+\node(1)at(0,1)[label=left:$b$]{};
+\node(0)at(0,0)[label=left:$a$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|ccc|}\hline
+\W{\cdot}&\W{c}&\W{b}&\W{a}\\\hline
+c&a&c&c\\
+b&\g{c}&\rd{b}&a\\
+a&\g{c}&\g{a}&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{CPoMon}_{3,1}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|ccc|}\hline
+\W{\cdot}&\W{c}&\W{b}&\W{a}\\\hline
+c&\rd{c}&c&c\\
+b&\g{c}&\rd{b}&a\\
+a&\g{c}&\g{a}&\rd{a}\\
+\hline
+\end{array}$\\
+$\mathbf{CPoMon}_{3,2}$
+\end{tabular}
+
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{InPos}_{8,1}$};
+\node(7)at(0,4)[label=left:$1$]{};
+\node(6)at(-0.5,3)[label=left:$a$]{}edge(7);
+\node(5)at(0.5,3)[label=right:$b$]{}edge(7);
+\node(4)at(0.5,2)[label=right:$d$]{}edge(5)edge(6);
+\node(3)at(-0.5,2)[label=left:$c$]{}edge(5)edge(6);
+\node(2)at(0.5,1)[label=right:$\m b$]{}edge(3)edge(4);
+\node(1)at(-0.5,1)[label=left:$\m a$]{}edge(3)edge(4);
+\node(0)at(0,0)[label=left:$0$]{}edge(1)edge(2);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{d}&\W{c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&d&d&\m b&\m b&0\\
+b&c&\rd{b}&\m a&c&0&\m a\\
+d&\m b&d&0&\m b&0&0\\
+c&c&\m a&\m a&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{\m a}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyInPorim}_{8,1}$
+\end{tabular}
+\ 
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{InD}_{8,1}$};
+\node(7)at(0,6)[label=left:$1$]{};
+\node(6)at(0,5)[label=left:$a$]{}edge(7);
+\node(5)at(0,4)[label=left:$b$]{}edge(6);
+\node(4)at(0.5,3)[label=right:$d$]{}edge(5);
+\node(3)at(-0.5,3)[label=left:$c$]{}edge(5);
+\node(2)at(0,2)[label=left:$\m b$]{}edge(3)edge(4);
+\node(1)at(0,1)[label=left:$\m a$]{}edge(2);
+\node(0)at(0,0)[label=left:$0$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{d}&\W{c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&d&d&\m b&\m b&0\\
+b&c&\m b&\m a&\m b&0&0\\
+d&\m b&\m b&0&\m b&0&0\\
+c&c&\m a&\m a&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyIInDMon}_{8,1}$
+\end{tabular}
+\ 
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{InTo}_{8}$};
+\node(7)at(0,7)[label=left:$1$]{};
+\node(6)at(0,6)[label=left:$a$]{}edge(7);
+\node(5)at(0,5)[label=left:$b$]{}edge(6);
+\node(4)at(0,4)[label=left:$c$]{}edge(5);
+\node(3)at(0,3)[label=left:$\m c$]{}edge(4);
+\node(2)at(0,2)[label=left:$\m b$]{}edge(3);
+\node(1)at(0,1)[label=left:$\m a$]{}edge(2);
+\node(0)at(0,0)[label=left:$0$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&c&c&\m c&\m b&0\\
+b&b&\m b&\m b&\m a&0&0\\
+c&\g{c}&\g{\m b}&\m b&0&0&0\\
+\m c&\m b&\m b&\g{0}&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyIInToMon}_{8,1}$
+\end{tabular}
+\ 
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&c&c&\m c&\m b&0\\
+b&b&c&c&\m a&0&0\\
+c&\g{c}&\g{c}&\rd{c}&0&0&0\\
+\m c&\m b&\m b&\g{0}&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyIInToMon}_{8,2}$
+\end{tabular}
+\ 
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&b&c&\m b&\m b&0\\
+b&c&\m b&\m b&\m b&0&0\\
+c&\g{c}&\g{\m b}&\m b&0&0&0\\
+\m c&\m c&\m a&\g{0}&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyIInToMon}_{8,3}$
+\end{tabular}
+\ 
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\rd{a}&b&c&\m b&\m b&0\\
+b&c&c&c&\m b&0&0\\
+c&\g{c}&\g{c}&\rd{c}&0&0&0\\
+\m c&\m c&\m a&\g{0}&0&0&0\\
+\m b&\g{\m b}&\g{0}&\g{0}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{CyIInToMon}_{8,4}$
+\end{tabular}
+\ 
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{InPos}_{8,2}$};
+\node(7)at(0,5)[label=left:$1$]{};
+\node(6)at(0,4)[label=left:$a$]{}edge(7);
+\node(5)at(-0.5,3)[label=left:$b$]{}edge(6);
+\node(4)at(0.5,3)[label=right:$c$]{}edge(6);
+\node(3)at(0.5,2)[label=right:$\m c$]{}edge(4)edge(5);
+\node(2)at(-0.5,2)[label=left:$\m b$]{}edge(4)edge(5);
+\node(1)at(0,1)[label=left:$\m a$]{}edge(2)edge(3);
+\node(0)at(0,0)[label=left:$0$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\m a&\m a&\m a&\m a&\m a&0\\
+b&\g{\m a}&\m a&\m a&\m a&0&0\\
+c&\g{\m a}&\g{\m a}&\m a&0&\m a&0\\
+\m c&\g{\m a}&\g{\m a}&\g{0}&0&0&0\\
+\m b&\g{\m a}&\g{0}&\g{\m a}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,1}$
+\end{tabular}
+\ 
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&\m c&\m c&\m a&\m a&\m a&0\\
+b&\g{\m c}&\m c&\m a&\m a&0&0\\
+c&\g{\m a}&\g{\m a}&\m a&0&\m a&0\\
+\m c&\g{\m a}&\g{\m a}&\g{0}&0&0&0\\
+\m b&\g{\m a}&\g{0}&\g{\m a}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,2}$
+\end{tabular}
+\ 
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{a}&\W{b}&\W{c}&\W{\m c}&\W{\m b}&\W{\m a}\\\hline
+a&b&b&\m c&\m c&\m a&0\\
+b&\g{b}&\rd{b}&\m c&\m c&0&0\\
+c&\g{\m c}&\g{\m c}&\m a&0&\m a&0\\
+\m c&\g{\m c}&\g{\m c}&\g{0}&0&0&0\\
+\m b&\g{\m a}&\g{0}&\g{\m a}&\g{0}&0&0\\
+\m a&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&0\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,3}$
+\end{tabular}
+
+
+
+
+\begin{tikzpicture}
+\node at(0,-1)[n]{$\mathbf{Pos}_{8,1}$};
+\node(7)at(0,5)[label=left:$1$]{};
+\node(6)at(0,4)[label=left:$\m a$]{}edge(7);
+\node(5)at(0.5,3)[label=right:$\m c$]{}edge(6);
+\node(4)at(-0.5,3)[label=left:$\m b$]{}edge(6);
+\node(3)at(0.5,2)[label=right:$c$]{}edge(4)edge(5);
+\node(2)at(-0.5,2)[label=left:$b$]{}edge(4)edge(5);
+\node(1)at(0,1)[label=left:$a$]{}edge(2)edge(3);
+\node(0)at(0,0)[label=left:$\bot$]{}edge(1);
+\end{tikzpicture}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{\m a}&\W{\m c}&\W{\m b}&\W{c}&\W{b}&\W{a}\\\hline
+\m a&a&a&a&a&a&\bot\\
+\m c&\g{a}&a&a&\bot&a&\bot\\
+\m b&\g{a}&\g{a}&a&a&\bot&\bot\\
+c&\g{a}&\g{\bot}&\g{a}&\bot&\bot&\bot\\
+b&\g{a}&\g{a}&\g{\bot}&\g{\bot}&\bot&\bot\\
+a&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\bot\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,1}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{\m a}&\W{\m c}&\W{\m b}&\W{c}&\W{b}&\W{a}\\\hline
+\m a&b&b&a&a&a&\bot\\
+\m c&\g{b}&b&a&\bot&a&\bot\\
+\m b&\g{a}&\g{a}&a&a&\bot&\bot\\
+c&\g{a}&\g{\bot}&\g{a}&\bot&\bot&\bot\\
+b&\g{a}&\g{a}&\g{\bot}&\g{\bot}&\bot&\bot\\
+a&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\bot\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,2}$
+\end{tabular}
+\ 
+\begin{tabular}[b]{c}
+$\begin{array}{|c|cccccc|}\hline
+\W{\cdot}&\W{\m a}&\W{\m c}&\W{\m b}&\W{c}&\W{b}&\W{a}\\\hline
+\m a&\m c&\m c&b&a&b&\bot\\
+\m c&\g{\m c}&\mathbf{\m c}&b&\bot&b&\bot\\
+\m b&\g{b}&\g{b}&a&a&\bot&\bot\\
+c&\g{a}&\g{\bot}&\g{a}&\bot&\bot&\bot\\
+b&\g{b}&\g{b}&\g{\bot}&\g{\bot}&\bot&\bot\\
+a&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\g{\bot}&\bot\\
+\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,3}$
+\end{tabular}
+\end{document}
+\ 
+\begin{tikzpicture}%[baseline=(L.base)]
+%\node(L)at(0,-1)[n]{$\mathbf{InPocrim}_{8}$};
+\node(7)at(0,5)[label=left:$1$]{};
+\node(6)at(0,4)[label=left:$\m a$]{}edge(7);
+\node(5)at(0.5,3)[label=right:$\m c$]{}edge(6);
+\node(4)at(-0.5,3)[label=left:$\m b$]{}edge(6);
+\node(3)at(0.5,2)[label=right:$c$]{}edge(4)edge(5);
+\node(2)at(-0.5,2)[label=left:$b$]{}edge(4)edge(5);
+\node(1)at(0,1)[label=left:$a$]{}edge(2)edge(3);
+\node(0)at(0,0)[label=left:$\bot$]{}edge(1);
+\end{tikzpicture}\ 
+\begin{tabular}{c}
+$\begin{array}{|c|cccccc|}\hline
+\W\cdot&\W a&\W b&\W c&\W{\m b}&\W{\m c}&\W{\m a}\\\hline
+a&\bot&\bot&\bot&\bot&\bot&\bot\\
+b&\g\bot&\bot&\bot&\bot&{a}&{a}\\
+c&\g\bot&\g\bot&\bot&{a}&\bot&{a}\\
+\m b&\g\bot&\g\bot&\g{a}&{a}&{a}&{a}\\
+\m c&\g\bot&\g{a}&\g\bot&\g{a}&{a}&{a}\\
+\m a&\g\bot&\g{a}&\g{a}&\g{a}&\g{a}&{a}\\\hline
+\end{array}$\\
+$\mathbf{InPocrim}_{8,1}$
+\end{tabular}
+\ 
+$\begin{array}{|l|}\hline
+A_{1}\\
+\begin{array}{c|cccccccc}*&0&1&2&3&4&5&6&7\\\hline
+0&\mathbf{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}\\
+1&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{1}\\
+2&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{1}&\g{1}&\g{2}\\
+3&\g{0}&\g{0}&\g{0}&\g{0}&\g{1}&\g{0}&\g{1}&\g{3}\\
+4&\g{0}&\g{0}&\g{0}&\g{1}&\g{1}&\g{1}&\g{1}&\g{4}\\
+5&\g{0}&\g{0}&\g{1}&\g{0}&\g{1}&\g{2}&\g{2}&\g{5}\\
+6&\g{0}&\g{0}&\g{1}&\g{1}&\g{1}&\g{2}&\g{2}&\g{6}\\
+7&\g{0}&\g{1}&\g{2}&\g{3}&\g{4}&\g{5}&\g{6}&\mathbf{7}\\
+\end{array}
+\ \begin{array}{c|c}&-\\\hline
+0&7\\
+1&6\\
+2&4\\
+3&5\\
+4&2\\
+5&3\\
+6&1\\
+7&0\\
+\end{array}
+\\\hline\end{array}$$\begin{array}{|l|}\hline
+A_{2}\\
+\begin{array}{c|cccccccc}*&0&1&2&3&4&5&6&7\\\hline
+0&\mathbf{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}\\
+1&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{1}\\
+2&\g{0}&\g{0}&\g{0}&\g{0}&\g{0}&\g{2}&\g{2}&\g{2}\\
+3&\g{0}&\g{0}&\g{0}&\g{0}&\g{1}&\g{0}&\g{1}&\g{3}\\
+4&\g{0}&\g{0}&\g{0}&\g{1}&\g{1}&\g{2}&\g{2}&\g{4}\\
+5&\g{0}&\g{0}&\g{2}&\g{0}&\g{2}&\mathbf{5}&\g{5}&\g{5}\\
+6&\g{0}&\g{0}&\g{2}&\g{1}&\g{2}&\g{5}&\g{5}&\g{6}\\
+7&\g{0}&\g{1}&\g{2}&\g{3}&\g{4}&\g{5}&\g{6}&\mathbf{7}\\
+\end{array}
+\ \begin{array}{c|c}&-\\\hline
+0&7\\
+1&6\\
+2&4\\
+3&5\\
+4&2\\
+5&3\\
+6&1\\
+7&0\\
+\end{array}
+\\\hline\end{array}$
+
+\noindent
+There are $1+1+1+2+5+15=25$ lattices with $\le 6$ elements.
+In the list below, each lattice is named $B_k,C_n,D_{n,i}$ or $L_{n,i}$
+depending on whether it is a Boolean algebra, a chain with $n\ge 3$ elements, 
+a distributive lattice or
+a nondistributive lattice with $n\ge 5$ elements. The number $i$ is an index that
+enumerates nonisomorphic lattices of size $n$, in order
+of increasing height, increasing width and decreasing number of lines.
+
+\setlength{\arraycolsep}{2pt}
+
+%\begin{center}
+\sloppy
+
+{\tikzstyle{every picture} = [scale=0.2]
+\tikzstyle{every node} = [draw, fill=white, circle, inner sep=0pt, minimum size=3pt]
+\small
+\noindent
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{0}$};
+%\node at (0,-2)[n]{$ $};
+\node(0) at (0,0){};
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{1}$};
+%\node at (0,-2)[n]{$ $};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0,2){};
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{3}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0,2){};
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{4}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0,3){};
+\node(2) at (0,2){} edge (3);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{5}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,4){};
+\node(3) at (0,3){} edge (4);
+\node(2) at (0,2){} edge (3);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{5,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,3){};
+\node(3) at (0,2){} edge (4);
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{5,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,3){};
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+% \begin{tikzpicture}[baseline=0pt]
+% \node at (0,-1.5)[n]{$C_{6}$};
+% %\node at (0,-2)[n]{$ $};
+% \node(5) at (0,5){};
+% \node(4) at (0,4){} edge (5);
+% \node(3) at (0,3){} edge (4);
+% \node(2) at (0,2){} edge (3);
+% \node(1) at (0,1){} edge (2);
+% \node(0) at (0,0){} edge (1);
+% \end{tikzpicture}
+% \ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0.5,3){};
+\node(4) at (1.5,2){} edge (5);
+\node(3) at (-0.5,2){} edge (5);
+\node(2) at (0.5,1){} edge (3) edge (4);
+\node(1) at (-1.5,1){} edge (3);
+\node(0) at (-0.5,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (-1,3){} edge (5);
+\node(2) at (0,2){} edge (3) edge (4);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,4}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (0,2){} edge (4);
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf S_{3,1}$};
+\node(2) at (0.5,1){};
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf S_{4,1}$};
+\node(3) at (0.7,1){};
+\node(2) at (1.4,0){} edge (3);
+\node(1) at (0.7,0){} edge (3);
+\node(0) at (0,0){} edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf S_{4,2}$};
+\node(3) at (0.5,2){};
+\node(2) at (0.5,1){} edge (3);
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf S_{4,3}$};
+\node(3) at (0.5,2){};
+\node(2) at (1,1){} edge (3);
+\node(1) at (0,1){} edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf M_{3,1}$};
+\node(2) at (0.5,1){};
+\node(1) at (-0.5,1){};
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf M_{4,1}$};
+\node(3) at (0.7,1){};
+\node(2) at (0,1){};
+\node(1) at (-0.7,1){};
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf M_{4,2}$};
+\node(3) at (0.5,2){};
+\node(2) at (0.5,1){} edge (3);
+\node(1) at (-0.5,1){};
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf M_{4,3}$};
+\node(3) at (0.5,2){};
+\node(2) at (-0.5,2){};
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+
+\quad
+
+\noindent
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{5,1}$};
+\node(4) at (0,2){};
+\node(3) at (1,1){} edge (4);
+\node(2) at (0,1){} edge (4);
+\node(1) at (-1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{5,2}$};
+\node(4) at (0,3){};
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,1.5){} edge (4);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,1}$};
+\node(5) at (0,2){};
+\node(4) at (1.5,1){} edge (5);
+\node(3) at (0.5,1){} edge (5);
+\node(2) at (-0.5,1){} edge (5);
+\node(1) at (-1,1){} edge (5);
+\node(0) at (0,0){} edge (1) edge (2) edge (3) edge (4);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,2}$};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-1,2){} edge (5);
+\node(2) at (1,1){} edge (4);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,3}$};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-0.01,2){} edge (5);
+\node(2) at (-1,1.5){} edge (5);
+\node(1) at (1,1){} edge (3) edge (4);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,4}$};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-1,1.5){} edge (5);
+\node(2) at (1,1){} edge (4);
+\node(1) at (-0.01,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,5}$};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (0,2){} edge (5);
+\node(2) at (-1,2){} edge (5);
+\node(1) at (0,1){} edge (2) edge (3) edge (4);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,6}$};
+\node(5) at (0,3){};
+\node(4) at (0,2){} edge (5);
+\node(3) at (1,1){} edge (4);
+\node(2) at (0,1){} edge (4);
+\node(1) at (-1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,7}$};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (0,1.5){} edge (5);
+\node(2) at (-1,1.5){} edge (5);
+\node(1) at (1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,8}$};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (-1,2.5){} edge (5);
+\node(2) at (1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,9}$};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,1.5){} edge (4);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+\node at (0,-1)[n]{$\mathbf L_{6,10}$};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (5);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{3,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0.7,0){};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (2) edge (3);
+\node(0) at (0,0){} edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (2) edge (3);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (3);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,4}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,1){};
+\node(2) at (-0.5,1){};
+\node(1) at (0.7,0){};
+\node(0) at (0,0){} edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,5}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1.7,0){};
+\node(2) at (0.5,1){};
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,6}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1.4,0){};
+\node(2) at (0.7,0){};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,7}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.7,0){};
+\node(2) at (0,2){};
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+}
+
+\vskip.5in
+
+{\tikzstyle{every picture} = [scale=0.2]
+\tikzstyle{every node} = [draw, fill=white, circle, inner sep=0pt, minimum size=3pt]
+\small
+\noindent
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{3,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0.7,0){};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (2) edge (3);
+\node(0) at (0,0){} edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (2) edge (3);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1,1){};
+\node(2) at (0,1){};
+\node(1) at (1,0){} edge (3);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,4}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,1){};
+\node(2) at (-0.5,1){};
+\node(1) at (0.7,0){};
+\node(0) at (0,0){} edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,5}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1.7,0){};
+\node(2) at (0.5,1){};
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,6}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (1.4,0){};
+\node(2) at (0.7,0){};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$P_{4,7}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.7,0){};
+\node(2) at (0,2){};
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$J_{3,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0.5,1){};
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$J_{4,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.7,1){};
+\node(2) at (1.4,0){} edge (3);
+\node(1) at (0.7,0){} edge (3);
+\node(0) at (0,0){} edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$J_{4,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,2){};
+\node(2) at (0.5,1){} edge (3);
+\node(1) at (1,0){} edge (2);
+\node(0) at (0,0){} edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$J_{4,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,2){};
+\node(2) at (1,1){} edge (3);
+\node(1) at (0,1){} edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$M_{3,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0.5,1){};
+\node(1) at (-0.5,1){};
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$M_{4,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.7,1){};
+\node(2) at (0,1){};
+\node(1) at (-0.7,1){};
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$M_{4,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,2){};
+\node(2) at (0.5,1){} edge (3);
+\node(1) at (-0.5,1){};
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$M_{4,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0.5,2){};
+\node(2) at (-0.5,2){};
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{0}$};
+%\node at (0,-2)[n]{$ $};
+\node(0) at (0,0){};
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{1}$};
+%\node at (0,-2)[n]{$ $};
+\node(1) at (0,1){};
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$B_{2}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0,2){};
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+
+\ 
+
+\noindent
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{3}$};
+%\node at (0,-2)[n]{$ $};
+\node(2) at (0,2){};
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{4}$};
+%\node at (0,-2)[n]{$ $};
+\node(3) at (0,3){};
+\node(2) at (0,2){} edge (3);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$C_{5}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,4){};
+\node(3) at (0,3){} edge (4);
+\node(2) at (0,2){} edge (3);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{5,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,3){};
+\node(3) at (0,2){} edge (4);
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{5,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,3){};
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+% \begin{tikzpicture}[baseline=0pt]
+% \node at (0,-1.5)[n]{$C_{6}$};
+% %\node at (0,-2)[n]{$ $};
+% \node(5) at (0,5){};
+% \node(4) at (0,4){} edge (5);
+% \node(3) at (0,3){} edge (4);
+% \node(2) at (0,2){} edge (3);
+% \node(1) at (0,1){} edge (2);
+% \node(0) at (0,0){} edge (1);
+% \end{tikzpicture}
+% \ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0.5,3){};
+\node(4) at (1.5,2){} edge (5);
+\node(3) at (-0.5,2){} edge (5);
+\node(2) at (0.5,1){} edge (3) edge (4);
+\node(1) at (-1.5,1){} edge (3);
+\node(0) at (-0.5,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (-1,3){} edge (5);
+\node(2) at (0,2){} edge (3) edge (4);
+\node(1) at (0,1){} edge (2);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$D_{6,4}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (0,2){} edge (4);
+\node(2) at (1,1){} edge (3);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{5,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,2){};
+\node(3) at (1,1){} edge (4);
+\node(2) at (0,1){} edge (4);
+\node(1) at (-1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{5,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(4) at (0,3){};
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,1.5){} edge (4);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,1}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,2){};
+\node(4) at (1.5,1){} edge (5);
+\node(3) at (0.5,1){} edge (5);
+\node(2) at (-0.5,1){} edge (5);
+\node(1) at (-1.5,1){} edge (5);
+\node(0) at (0,0){} edge (1) edge (2) edge (3) edge (4);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,2}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-1,2){} edge (5);
+\node(2) at (1,1){} edge (4);
+\node(1) at (-1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,3}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-0.01,2){} edge (5);
+\node(2) at (-1,1.5){} edge (5);
+\node(1) at (1,1){} edge (3) edge (4);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,4}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (-1,1.5){} edge (5);
+\node(2) at (1,1){} edge (4);
+\node(1) at (-0.01,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,5}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (0,2){} edge (5);
+\node(2) at (-1,2){} edge (5);
+\node(1) at (0,1){} edge (2) edge (3) edge (4);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,6}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (0,2){} edge (5);
+\node(3) at (1,1){} edge (4);
+\node(2) at (0,1){} edge (4);
+\node(1) at (-1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,7}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,3){};
+\node(4) at (1,2){} edge (5);
+\node(3) at (0,1.5){} edge (5);
+\node(2) at (-1,1.5){} edge (5);
+\node(1) at (1,1){} edge (4);
+\node(0) at (0,0){} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,8}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (-1,2.5){} edge (5);
+\node(2) at (1,2){} edge (4);
+\node(1) at (0,1){} edge (2) edge (3);
+\node(0) at (0,0){} edge (1);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,9}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (0,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,1.5){} edge (4);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+\ 
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1.5)[n]{$L_{6,10}$};
+%\node at (0,-2)[n]{$ $};
+\node(5) at (0,4){};
+\node(4) at (1,3){} edge (5);
+\node(3) at (1,2){} edge (4);
+\node(2) at (-1,2){} edge (5);
+\node(1) at (1,1){} edge (3);
+\node(0) at (0,0){} edge (1) edge (2);
+\end{tikzpicture}
+}
+
+
+
+\section{Residuated lattices of size up to 5}
+
+\noindent
+There are $1+1+3+20+149=174$ residuated lattices with $\le 5$ elements.
+In the list below, each algebra is named $R^{mn}_{ij}$ where $m$ is the 
+cardinality and $n$ enumerates nonisomorphic lattices of size $m$, in order
+of decreasing height. The depth of the identity element $1$ is given by $i$, 
+and $j$ enumerates nonisomorphic algebras. For lattices of the same height
+distributive lattices appear before modular lattices, followed by nonmodular
+lattices, and selfdual lattices appear
+before nonselfdual lattices. Algebras with more central elements (round 
+circles) are listed earlier, hence commutative residuated lattices precede 
+noncommutative ones. Finally, algebras are listed in decreasing order of 
+number of idempotents (black nodes).
+
+The monoid operation is indicated by labels. If a nonobvious product $xy$ 
+is not listed, then it can be deduced from the given information: either
+it follows from idempotence ($x^2=x$) indicated by a black node
+or from commutativity or there are products $uv=wz$ such that
+$u\le x\le w$ and $v\le y\le z$ (possibly $uv=\bot\bot$ or $wz=\top\top$).
+
+If you have comments or notice any issues in this list, please 
+email \texttt{jipsen.AT.chapman.edu}.
+
+\tikzstyle{every picture} = [scale=0.5]
+\tikzstyle{every node} = [draw, fill=white, circle, inner sep=0pt, minimum size=5pt]
+\tikzstyle{n} = [draw=none, rectangle, inner sep=0pt] %name style
+\tikzstyle{i} = [draw, fill=black, circle, inner sep=0pt, minimum size=5pt] %idempotent
+\tikzstyle{e} = [draw=none, rectangle, inner sep=0pt]
+\tikzstyle{nci} = [draw, fill=black, rectangle, inner sep=0pt, minimum size=5pt]
+\tikzstyle{nc} = [draw, fill=white, rectangle, inner sep=0pt, minimum size=5pt]
+
+\begin{tikzpicture}
+\draw(0,1.4)node[label=right:{\ $=$ central nonidempotent}]{};
+\draw(0,2.1)node[i,label=right:{\ $=$ central idempotent}]{};
+\draw(0,0)node[nc,label=right:{\ $=$ noncentral nonidempotent}]{};
+\draw(0,0.7)node[nci,label=right:{\ $=$ noncentral idempotent}]{};
+\end{tikzpicture}
+
+\setlength{\arraycolsep}{2pt}
+
+%\begin{center}
+\sloppy
+
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{1,1}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(0) at (0,0)[i,label=right:$1$]{};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{2,1}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(1) at (0,1)[i,label=right:$1$]{};
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{3,1}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(2) at (0,2)[i,label=right:$1$]{};
+\node(1) at (0,1)[i,label=right:$a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{3,1}_{1,2}$};
+\node at (0,-2)[n]{$ $};
+\node(2) at (0,2)[i,label=right:$1$]{};
+\node(1) at (0,1)[,label=right:$a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{3,1}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(2) at (0,2)[i,label=right:$ $]{};
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,2}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,3}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,4}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,5}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,6}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,7}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[nci,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{1,8}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$1$]{};
+\node(2) at (0,2)[nci,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}ba$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$ $]{};
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$a{=}\top a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$ \top a$]{};
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$ $]{};
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[,label=right:$a{=}\top a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[nci,label=right:$ \top a$]{};
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$a{=}a\top $]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{2,5}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[nci,label=right:$ a\top $]{};
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$a{=}\top a$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{3,1}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$ $]{};
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,1}_{3,2}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,3)[i,label=right:$ a^2$]{};
+\node(2) at (0,2)[,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,2}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,2)[i,label=right:$1$]{};
+\node(2) at (1,1)[i,label=right:$b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$a$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,2}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,2)[i,label=right:$ $]{};
+\node(2) at (1,1)[i,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,2}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,2)[i,label=right:$ $]{};
+\node(2) at (1,1)[,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,2}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,2)[i,label=right:$ \top a$]{};
+\node(2) at (1,1)[,label=right:$a$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1{=}a^2$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{4,2}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(3) at (0,2)[i,label=right:$ a^2$]{};
+\node(2) at (1,1)[,label=right:$a$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+
+\end{document}
+
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ bc$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}bc{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ c^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}b^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ac{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,12}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}b^2{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ bc$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,13}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,14}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}bc{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ c^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,15}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,16}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,17}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,18}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,19}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,20}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ab{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,21}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,22}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}b^2{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,23}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ca{=}bc$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,24}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ca$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,25}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}bc{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ cb$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,26}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}cb{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ bc$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,27}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}ba$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,28}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ba$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$c{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,29}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,30}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ba$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,31}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ca{=}b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,32}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ba{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,33}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ca$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,34}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ba$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ac{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,35}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nc,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ab{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba{=}ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,36}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nc,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[,label=right:$c{=}ba{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,37}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}bc{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ca$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,38}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}cb{=}ca$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,39}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ac{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,40}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,41}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ca{=}ba$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,42}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nci,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nc,label=right:$b{=}ba$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}ca$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,43}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nc,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}bc{=}ac$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ca$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{1,44}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$1$]{};
+\node(3) at (0,3)[nc,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b{=}a^2$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$c{=}cb{=}ca$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ac$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top a$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top a$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}a^2{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}a^2$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}a^2{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}\top b{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,12}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ \top a$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}a\top $]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,13}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ a\top $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,14}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}b\top $]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,15}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ b\top {=}\top a$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$a$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,16}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,17}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}ba{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,18}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ \top a$]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}a\top $]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,19}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ a\top $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$a{=}\top a$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,20}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}\top b{=}\top a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}b\top $]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{2,21}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$1$]{} edge (4);
+\node(2) at (0,2)[,label=right:$a{=}b\top {=}\top a$]{} edge (3);
+\node(1) at (0,1)[nc,label=right:$b{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ a^2$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ a^2{=}\top b$]{};
+\node(3) at (0,3)[,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ a^2$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ \top b$]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}b\top {=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[nci,label=right:$ b\top $]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}ab{=}\top b$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[nci,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}ba$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{3,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ \top b$]{};
+\node(3) at (0,3)[nci,label=right:$a{=}ba$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$1$]{} edge (3);
+\node(1) at (0,1)[nci,label=right:$b{=}ab$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ $]{};
+\node(3) at (0,3)[i,label=right:$a{=}b^2$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ a^2$]{};
+\node(3) at (0,3)[,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ ab$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[i,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ ab$]{};
+\node(3) at (0,3)[,label=right:$a{=}b^2$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ b^2$]{};
+\node(3) at (0,3)[,label=right:$a$]{} edge (4);
+\node(2) at (0,2)[,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ ab$]{};
+\node(3) at (0,3)[nc,label=right:$a{=}ba$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,1}_{4,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,4)[i,label=right:$ ba$]{};
+\node(3) at (0,3)[nc,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (0,2)[nci,label=right:$b$]{} edge (3);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$1$]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[i,label=right:$c$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ bc$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{1,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$1$]{};
+\node(3) at (0,2)[,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[i,label=right:$c{=}a^2$]{} edge (3);
+\node(1) at (-1,1)[,label=left:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ bc{=}ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{1,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$1$]{};
+\node(3) at (0,2)[,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[,label=right:$c$]{} edge (3);
+\node(1) at (-1,1)[,label=left:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[i,label=right:$b{=}ab$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (0,2)[i,label=right:$a{=}ab$]{} edge (4);
+\node(2) at (1,1)[,label=right:$b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1{=}b^2$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (0,2)[i,label=right:$a{=}b^2{=}ab$]{} edge (4);
+\node(2) at (1,1)[,label=right:$b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2$]{};
+\node(3) at (0,2)[,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[,label=right:$b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[nci,label=right:$ \top b$]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[nci,label=right:$b{=}b\top {=}ab$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,2}_{3,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[nci,label=right:$ b\top $]{};
+\node(3) at (0,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (1,1)[nci,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{1,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$1$]{};
+\node(3) at (1,2)[i,label=right:$b$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$a$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$c{=}ab$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{1,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$1$]{};
+\node(3) at (1,2)[nci,label=right:$b$]{} edge (4);
+\node(2) at (-1,2)[nci,label=left:$a$]{} edge (4);
+\node(1) at (0,1)[nc,label=right:$c{=}cb{=}ac{=}ab$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}ab{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}a^2{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top a$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1{=}a^2$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}a^2{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top a$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1{=}a^2$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,12}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[nc,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,13}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[nc,label=right:$b{=}ba{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,14}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[nci,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}ab{=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[nci,label=right:$b{=}ba{=}b\top $]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{2,15}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[nci,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}ba{=}b\top {=}\top a$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$1$]{} edge (4);
+\node(1) at (0,1)[nci,label=right:$b{=}ab{=}\top b$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{3,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ ab$]{};
+\node(3) at (1,2)[i,label=right:$b$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$a$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{3,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ ab{=}b^2$]{};
+\node(3) at (1,2)[,label=right:$b$]{} edge (4);
+\node(2) at (-1,2)[i,label=left:$a$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,3}_{3,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2{=}ab{=}b^2$]{};
+\node(3) at (1,2)[,label=right:$b$]{} edge (4);
+\node(2) at (-1,2)[,label=left:$a$]{} edge (4);
+\node(1) at (0,1)[i,label=right:$1$]{} edge (2) edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$1$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$a{=}\top a$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (1,2)[i,label=right:$1$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$a{=}ab{=}\top a$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a{=}b^2{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b{=}ab{=}a^2{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (1,2)[i,label=right:$1$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$a{=}ab{=}\top a$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b{=}\top a$]{};
+\node(3) at (1,2)[i,label=right:$1$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$a{=}ab$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b{=}a^2$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2{=}\top b$]{};
+\node(3) at (1,2)[i,label=right:$1$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$a{=}ab$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,12}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b{=}a^2{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,13}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[,label=right:$b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,14}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[nc,label=right:$b{=}ab{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ba$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{2,15}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[nci,label=right:$a{=}\top a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$1$]{} edge (4);
+\node(1) at (1,1)[nc,label=right:$b{=}ba{=}\top b$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$b{=}ab{=}\top b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ $]{};
+\node(3) at (1,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b{=}ab{=}\top b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[i,label=left:$b{=}ab{=}\top b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ \top b$]{};
+\node(3) at (1,2)[i,label=right:$a{=}b^2$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b{=}ab$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2$]{};
+\node(3) at (1,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b{=}ab$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2{=}ab$]{};
+\node(3) at (1,2)[i,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ a^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b{=}ab{=}\top b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ b^2$]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ ab{=}a^2$]{};
+\node(3) at (1,2)[,label=right:$a{=}b^2$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,9}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2{=}ab{=}a^2$]{};
+\node(3) at (1,2)[,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[,label=left:$b$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,10}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2{=}ab$]{};
+\node(3) at (1,2)[nci,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[nc,label=left:$b{=}ba$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,4}_{3,11}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,3)[i,label=right:$ b^2{=}ba$]{};
+\node(3) at (1,2)[nci,label=right:$a$]{} edge (4);
+\node(2) at (-1,1.5)[nc,label=left:$b{=}ab$]{} edge (4);
+\node(1) at (1,1)[i,label=right:$1$]{} edge (3);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,1}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ $]{};
+\node(3) at (1,1)[i,label=right:$b{=}\top b$]{} edge (4);
+\node(2) at (0,1)[i,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ ab$]{} edge (1) edge (2) edge (3);
+\node at (0,3)[n]{$a{=}\top a$};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,2}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ \top a$]{};
+\node(3) at (1,1)[i,label=right:$b{=}ab{=}\top b$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1{=}a^2$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,3}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ b^2$]{};
+\node(3) at (1,1)[,label=right:$b$]{} edge (4);
+\node(2) at (0,1)[i,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2) edge (3);
+\node at (0,3)[n]{$a{=}ab{=}\top a$};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,4}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ \top b$]{};
+\node(3) at (1,1)[,label=right:$b$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1{=}b^2$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2) edge (3);
+\node at (0,3)[n]{$a{=}ab{=}\top a$};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,5}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ b^2$]{};
+\node(3) at (1,1)[,label=right:$b$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ a^2$]{} edge (1) edge (2) edge (3);
+\node at (0,3)[n]{$a{=}ab{=}\top a$};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,6}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ \top a{=}\top b$]{};
+\node(3) at (1,1)[,label=right:$b{=}a^2$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1{=}ab$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2) edge (3);
+\node at (0,3)[n]{$a{=}b^2$};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,7}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ ab{=}b^2{=}\top a$]{};
+\node(3) at (1,1)[,label=right:$b{=}a^2$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2) edge (3);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline=0pt]
+\node at (0,-1)[n]{$R^{5,5}_{2,8}$};
+\node at (0,-2)[n]{$ $};
+\node(4) at (0,2)[i,label=right:$ a^2{=}ab{=}b^2$]{};
+\node(3) at (1,1)[,label=right:$b$]{} edge (4);
+\node(2) at (0,1)[,label=right:$a$]{} edge (4);
+\node(1) at (-1,1)[i,label=left:$1$]{} edge (4);
+\node(0) at (0,0)[i,label=right:$ $]{} edge (1) edge (2) edge (3);
+\end{tikzpicture}%\end{center}
+\end{document}
+
+
+pj=['Jslat',
+ 'pJslat',
+ 'JUn',
+ 'JNUn',
+ 'JMag',
+ 'JSgrp',
+ 'JMon',
+ 'IJMon',
+ 'IdJSgrp',
+ 'IdJMon',
+ 'JImpA',
+ 'LrJMag',
+ 'LrJSgrp',
+ 'LrJMon',
+ 'ILrJMon',
+ 'IdLrJSgrp',
+ 'IdLrJMon',
+ 'RJUn',
+ 'DivJslat',
+ 'RJMag',
+ 'RJSgrp',
+ 'RJMon',
+ 'IRJMon',
+ 'IdRJSgrp',
+ 'IdRJMon',
+ 'GalJslat',
+ 'InLat',
+ 'In$\ell$Mag',
+ 'In$\ell$Sgrp',
+ 'In$\ell$Mon',
+ 'IIn$\ell$Mon',
+ 'CyIn$\ell$Mag',
+ 'CyIn$\ell$Sgrp',
+ 'CyIn$\ell$Mon',
+ 'CyIIn$\ell$Mon',
+ '$\ell$Grp',
+ 'CJSgrp',
+ 'CJMon',
+ 'CIJMon',
+ 'CIdJSgrp',
+ 'CIdJMon',
+ 'CDivJslat',
+ 'BCKJ',
+ 'CRJMag',
+ 'HilAJ',
+ 'TarAJ',
+ 'CRJSgrp',
+ 'CRJMon',
+ 'CIRJMon',
+ 'CIdRJSgrp',
+ 'CIdRJMon',
+ 'CIn$\ell$Mag',
+ 'CIn$\ell$Sgrp',
+ 'CIn$\ell$Mon',
+ 'CIIn$\ell$Mon',
+ 'Ab$\ell$Grp']
+ 
+ 
+ pm=['Mslat',
+ 'pMslat',
+ 'MUn',
+ 'MNUn',
+ 'MMag',
+ 'MSgrp',
+ 'MMon',
+ 'IMMon',
+ 'IdMSgrp',
+ 'IdMMon',
+ 'MImpA',
+ 'LrMMag',
+ 'LrMSgrp',
+ 'LrMMon',
+ 'ILrMMon',
+ 'IdLrMSgrp',
+ 'IdLrMMon',
+ 'RMUn',
+ 'DivMslat',
+ 'RMMag',
+ 'RMSgrp',
+ 'RMMon',
+ 'IRMMon',
+ 'IdRMSgrp',
+ 'IdRMMon',
+ 'GalMslat',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'CMSgrp',
+ 'CMMon',
+ 'CIMMon',
+ 'CIdMSgrp',
+ 'CIdMMon',
+ 'CDivMslat',
+ 'BCKM',
+ 'CRMMag',
+ 'HilAM',
+ 'TarAM',
+ 'CRMSgrp',
+ 'CRMMon',
+ 'CIRMMon',
+ 'CIdRMSgrp',
+ 'CIdRMMon',
+ '',
+ '',
+ '',
+ '',
+ '']
+ 
+ j=['Jslat',
+ 'pJslat',
+ 'lbJslat',
+ 'ubJslat',
+ 'JUn',
+ 'JNUn',
+ 'GalJslat',
+ 'JMag',
+ 'JSgrp',
+ 'JMon',
+ 'IdSrng$_0$',
+ 'IdSrng$_{01}$',
+ 'KA',
+ 'IJMon',
+ 'IdJSgrp',
+ 'IdJMon',
+ 'JImpA',
+ 'LrJMag',
+ 'LrJSgrp',
+ 'LrJMon',
+ 'ILrJMon',
+ 'IdLrJSgrp',
+ 'IdLrJMon',
+ 'RJUn',
+ 'DivJslat',
+ 'RJMag',
+ 'RJSgrp',
+ 'RJMon',
+ 'IRJMon',
+ 'IdRJSgrp',
+ 'IdRJMon',
+ 'CJSgrp',
+ 'CJMon',
+ 'CIJMon',
+ 'CIdJSgrp',
+ 'CIdJMon',
+ 'CDivJslat',
+ 'BCKJ',
+ 'CRJMag',
+ 'CRJSgrp',
+ 'CRJMon',
+ 'CIRJMon',
+ 'CIdRJSgrp',
+ 'CIdRJMon']
+ 
+ jl=['Lat',
+ 'pLat',
+ 'lbLat',
+ 'ubLat',
+ 'LUn',
+ 'LNUn',
+ 'GalLat',
+ 'LMag',
+ 'LSgrp',
+ 'LMon',
+ 'IdSrng$_0$',
+ 'IdSrng$_{01}$',
+ 'KA',
+ 'ILMon',
+ 'IdLSgrp',
+ 'IdLMon',
+ 'LImpA',
+ 'LrLMag',
+ 'LrLSgrp',
+ 'LrLMon',
+ 'ILrLMon',
+ 'IdLrLSgrp',
+ 'IdLrLMon',
+ 'RLUn',
+ 'DivLat',
+ 'RLMag',
+ 'RLSgrp',
+ 'RLMon',
+ 'IRLMon',
+ 'IdRLSgrp',
+ 'IdRLMon',
+ 'CLSgrp',
+ 'CLMon',
+ 'CILMon',
+ 'CIdLSgrp',
+ 'CIdLMon',
+ 'CDivLat',
+ 'BCKL',
+ 'CRLMag',
+ 'CRLSgrp',
+ 'CRLMon',
+ 'CIRLMon',
+ 'CIdRLSgrp',
+ 'CIdRLMon']
+ 
+ m=['Mslat',
+ 'pMslat',
+ 'MUn',
+ 'MNUn',
+ 'GalMslat',
+ 'MMag',
+ 'MSgrp',
+ 'MMon',
+ 'IMMon',
+ 'IdMSgrp',
+ 'IdMMon',
+ 'MImpA',
+ 'LrMMag',
+ 'LrMSgrp',
+ 'LrMMon',
+ 'ILrMMon',
+ 'RtHp',
+ 'IdLrMSgrp',
+ 'IdLrMMon',
+ 'RMUn',
+ 'DivMslat',
+ 'RMMag',
+ 'RMSgrp',
+ 'RMMon',
+ 'IRMMon',
+ 'IdRMSgrp',
+ 'IdRMMon',
+ 'CMSgrp',
+ 'CMMon',
+ 'CIMMon',
+ 'CIdMSgrp',
+ 'CIdMMon',
+ 'CDivMslat',
+ 'BCKMslat',
+ 'CRMMag',
+ 'CRMSgrp',
+ 'CRMMon',
+ 'CIRMMon',
+ 'Hp',
+ 'CIdRMSgrp',
+ 'CIdRMMon',
+ 'BrSlat']
+ 
+ ml=['Lat',
+ 'pLat',
+ 'LUn',
+ 'LNUn',
+ 'GalLat',
+ 'LMag',
+ 'LSgrp',
+ 'LMon',
+ 'ILMon',
+ 'IdLSgrp',
+ 'IdLMon',
+ 'LImpA',
+ 'LrLMag',
+ 'LrLSgrp',
+ 'LrLMon',
+ 'ILrLMon',
+ 'RtHp',
+ 'IdLrLSgrp',
+ 'IdLrLMon',
+ 'RLUn',
+ 'DivLat',
+ 'RLMag',
+ 'RLSgrp',
+ 'RLMon',
+ 'IRLMon',
+ 'IdRLSgrp',
+ 'IdRLMon',
+ 'CLSgrp',
+ 'CLMon',
+ 'CILMon',
+ 'CIdLSgrp',
+ 'CIdLMon',
+ 'CDivLat',
+ 'BCKLat',
+ 'CRLMag',
+ 'CRLSgrp',
+ 'CRLMon',
+ 'CIRLMon',
+ 'Hp',
+ 'CIdRLSgrp',
+ 'CIdRLMon',
+ 'BrSlat']
+ 
+ l=['Lat',
+ 'pLat',
+ 'bLat',
+ 'LUn',
+ 'LNUn',
+ 'LMag',
+ 'LSgrp',
+ 'LMon',
+ 'KLat',
+ 'ActLat',
+ 'ModLat',
+ 'MultLat',
+ 'ILMon',
+ 'IdLSgrp',
+ 'IdLMon',
+ 'LImpA',
+ 'LrLMag',
+ 'LrLSgrp',
+ 'LrLMon',
+ 'ILrLMon',
+ 'IdLrLSgrp',
+ 'IdLrLMon',
+ 'RLUn',
+ 'DivLat',
+ 'RLMag',
+ 'RLSgrp',
+ 'RL',
+ 'bRLat',
+ 'IRL',
+ 'IdRLSgrp',
+ 'IdRL',
+ 'FL',
+ 'FL$_c$',
+ 'FL$_e$',
+ 'FL$_w$',
+ 'FL$_{ec}$',
+ 'FL$_{ew}$',
+ 'GalLat',
+ 'InLat',
+ 'InLMag',
+ 'InLSgrp',
+ 'InFL',
+ 'IInFL',
+ 'CyInLMag',
+ 'CyInLSgrp',
+ 'CyInFL',
+ 'CyIInFL',
+ 'CLSgrp',
+ 'CLMon',
+ 'CILMon',
+ 'CIdLSgrp',
+ 'CIdLMon',
+ 'CDivLat',
+ 'BCKLat',
+ 'CRLMag',
+ 'CRLSgrp',
+ 'CRL',
+ 'CIRL',
+ 'CIdRLSgrp',
+ 'CIdRL',
+ 'CIdInFL',
+ 'CInLMag',
+ 'CInLSgrp',
+ 'CInFL',
+ 'CIInFL',
+ 'SkLat',
+ 'JsdLat',
+ 'MsdLat',
+ 'SdLat',
+ 'NdLat',
+ 'ADLat',
+ 'CdLat',
+ 'OLat',
+ 'OModLat',
+ 'MOLat',
+ 'Bilat',
+ 'CanRL',
+ 'CdModLat',
+ 'FRng',
+ 'ILLA',
+ 'LLA',
+ 'MALLA',
+ 'psMV']
+ 
+ ld=['DLat',
+ 'pDLat',
+ 'bDLat',
+ 'DLUn',
+ 'DLNUn',
+ 'DLMag',
+ 'DLSgrp',
+ 'DLMon',
+ '',
+ '',
+ '',
+ '',
+ 'DILMon',
+ 'DIdLSgrp',
+ 'DIdLMon',
+ 'DLImpA',
+ 'DLrLMag',
+ 'DLrLSgrp',
+ 'DLrLMon',
+ 'DILrLMon',
+ 'DIdLrLSgrp',
+ 'DIdLrLMon',
+ 'DRLUn',
+ 'DDivLat',
+ 'DRLMag',
+ 'DRLSgrp',
+ 'DRL',
+ 'DIRL',
+ 'DIdRLSgrp',
+ 'DIdRL',
+ 'DFL',
+ 'DFL$_c$',
+ 'DFL$_e$',
+ 'DFL$_w$',
+ 'DFL$_{ec}$',
+ 'DFL$_{ew}$',
+ 'DGalLat',
+ 'DInLat',
+ 'DInLMag',
+ 'DInLSgrp',
+ 'DInFL',
+ 'DIInFL',
+ 'CyDInLMag',
+ 'CyDInLSgrp',
+ 'CyDInFL',
+ 'CyDIInFL',
+ 'CDLSgrp',
+ 'CDLMon',
+ 'CDILMon',
+ 'CDIdLSgrp',
+ 'CDIdLMon',
+ 'CDDivLat',
+ '',
+ 'CDRLMag',
+ 'CDRLSgrp',
+ 'CDRL',
+ 'CDIRL',
+ 'CDIdRLSgrp',
+ 'CDIdRL',
+ 'CDIdInFL',
+ 'CDInLMag',
+ 'CDInLSgrp',
+ 'CDInFL',
+ 'CDIInFL',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'CDdLat',
+ '',
+ '',
+ '',
+ 'DBilat',
+ 'CanDRL',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '']
+ 
+ d=['DLat',
+ 'pDLat',
+ 'BDLat',
+ 'D$\\ell$Un',
+ 'D$\\ell$NUn',
+ 'pcDLat',
+ 'OckA',
+ 'DeMA',
+ 'DMMon',
+ 'DpAlg',
+ 'DdpAlg',
+ 'DDblpAlg',
+ 'StAlg',
+ 'DblStAlg',
+ 'D$\\ell$Mag',
+ 'D$\\ell$Sgrp',
+ 'D$\\ell$Mon',
+ 'DI$\\ell$Mon',
+ 'DId$\\ell$Sgrp',
+ 'DId$\\ell$Mon',
+ 'D$\\ell$ImpA',
+ 'DLr$\\ell$Mag',
+ 'DLr$\\ell$Sgrp',
+ 'DLr$\\ell$Mon',
+ 'DILr$\\ell$Mon',
+ 'DIdLr$\\ell$Sgrp',
+ 'DIdLr$\\ell$Mon',
+ 'DR$\\ell$Un',
+ 'DDivLat',
+ 'DR$\\ell$Mag',
+ 'DR$\\ell$Sgrp',
+ 'DRL',
+ 'DIRL',
+ 'DIdR$\\ell$Sgrp',
+ 'DIdRL',
+ 'DGalLat',
+ 'DInLat',
+ 'DIn$\\ell$Mag',
+ 'DIn$\\ell$Sgrp',
+ 'DInFL',
+ 'DIInFL',
+ 'CyDIn$\\ell$Mag',
+ 'CyDIn$\\ell$Sgrp',
+ 'CyDInFL',
+ 'CyDIInFL',
+ '$\\ell$Grp',
+ 'Rep$\\ell$Grp',
+ 'CD$\\ell$Sgrp',
+ 'CD$\\ell$Mon',
+ 'CDI$\\ell$Mon',
+ 'CDId$\\ell$Sgrp',
+ 'CDId$\\ell$Mon',
+ 'CDDivLat',
+ 'CDR$\\ell$Mag',
+ 'CDR$\\ell$Sgrp',
+ 'CDRL',
+ 'CDIRL',
+ 'CDIdR$\\ell$Sgrp',
+ 'CDIdRL',
+ 'CDIn$\\ell$Mag',
+ 'CDIn$\\ell$Sgrp',
+ 'CDInFL',
+ 'CDIInFL',
+ 'Ab$\\ell$Grp',
+ 'GBL',
+ 'GMV',
+ 'WHp',
+ 'BrA',
+ 'GBA',
+ 'BoolLat',
+ 'CRSlSgrp',
+ 'CRSlMon',
+ 'CIRSlMon',
+ 'MTLA',
+ 'BLA',
+ 'MV',
+ 'HA',
+ 'GödA',
+ 'CIdRSlSgrp',
+ 'CIdRSlMon',
+ 'CInSlSgrp',
+ 'CInSlMon',
+ 'DunnMon',
+ 'CIInRSlMon',
+ 'ImpLat',
+ 'KLA',
+ 'NVLGrp',
+ 'LA$_n$',
+ 'MZrd',
+ '$\\ell$Rng',
+ 'C$\\ell$Rng']
+ 
+ dt=['ToLat',
+ 'pToLat',
+ 'bToLat',
+ 'ToUn',
+ 'ToNUn',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'ToMag',
+ 'ToSgrp',
+ 'ToMon',
+ 'IToMon',
+ 'IdToSgrp',
+ 'IdToMon',
+ 'ToImpA',
+ 'LrToMag',
+ 'LrToSgrp',
+ 'LrToMon',
+ 'ILrToMon',
+ 'IdLrToSgrp',
+ 'IdLrToMon',
+ 'RToUn',
+ 'ToDivLat',
+ 'RToMag',
+ 'RToSgrp',
+ 'RToMon',
+ 'IRToMon',
+ 'IdRToSgrp',
+ 'IdRToMon',
+ 'GalToLat',
+ 'InToLat',
+ 'InToMag',
+ 'InToSgrp',
+ '',
+ '',
+ 'CyInToMag',
+ 'CyInToSgrp',
+ '',
+ '',
+ 'ToGrp',
+ '',
+ 'CToSgrp',
+ 'CToMon',
+ 'CIToMon',
+ 'CIdToSgrp',
+ 'CIdToMon',
+ 'CivToLat',
+ 'CRToMag',
+ 'CRToSgrp',
+ 'CRToMon',
+ 'CIRToMon',
+ 'CIdRToSgrp',
+ 'CIdRToMon',
+ 'CInToMag',
+ 'CInToSgrp',
+ '',
+ '',
+ 'AbToGrp',
+ 'GBLChn',
+ 'GMVChn',
+ 'ToWHp',
+ 'BrA',
+ '',
+ '',
+ 'CRToSgrp',
+ 'CRToMon',
+ 'CIRToMon',
+ 'MTLChn',
+ 'BLChn',
+ 'MVChn',
+ '',
+ 'GödChn',
+ 'CIdRToSgrp',
+ 'CIdRToMon',
+ 'CInToSgrp',
+ 'CInToMon',
+ 'DunnMon',
+ 'CIInRToMon',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'ToRng',
+ 'CToRng']
+ 
+ db=['BLat', 'pBLat', 'BBLat', 'BUn', 'BNUn', '', '', '', '',
+ '', '', '', '', '', 'BMag', 'BSgrp', 'BMon', 'BIMon',
+ 'BIdSgrp', 'BIdMon', 'BImpA', 'BLrMag', 'BLrSgrp', 'BILrMon',
+ 'BIdLrSgrp', 'BIdLrMon', 'BRUn', 'BDivLat', 'BRMag', 'BRSgrp',
+ 'BRL', 'BIRL', 'BIdRSgrp', 'BIdRL', 'BGalA', 'BInLat',
+ 'BInMag', 'BInSgrp', 'BInFL', 'BIInFL', 'BCyInMag',
+ 'BCyInSgrp',
+ 'BCyInFL',
+ 'BCyIInFL',
+ '',
+ '',
+ 'BCSgrp',
+ 'BCMon',
+ 'BCIMon',
+ 'BCIdSgrp',
+ 'BCIdMon',
+ 'BCDivLat',
+ 'BCRMag',
+ 'BCRSgrp',
+ 'BCRL',
+ 'BCIRL',
+ 'BCIdRSgrp',
+ 'BCIdRL',
+ 'BCInMag',
+ 'BCInSgrp',
+ 'BCInFL',
+ 'BCIInFL',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'BCRSgrp',
+ 'BCRMon',
+ 'BCIRMon',
+ '',
+ '',
+ '',
+ '',
+ '',
+ 'BCIdRSgrp',
+ 'BCIdRMon',
+ 'BCInSgrp',
+ 'BCInMon',
+ '',
+ 'CIInRMon',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '']
+ 
+ 
+ 
+ 
+ Full poset of classes:
+ 
+#subclassposet
+scp={'Pos': ['pPos', 'PoMag', 'PoImpA', 'PoNUn', 'PoUn', 'Jslat', 'Mslat', 'Set'],
+ 'pPos': ['PoMon', 'pJslat', 'pMslat', 'pSet'],
+ 'PoUn': ['GalPos', 'RPoUn', 'JUn', 'MUn', 'Unar'],
+ 'PoNUn': ['GalPos', 'JNUn', 'MNUn'],
+ 'PoMag': ['LrPoMag', 'PoSgrp', 'JMag', 'MMag'],
+ 'PoSgrp': ['CPoSgrp', 'IdPoSgrp', 'LrPoSgrp', 'PoMon', 'JSgrp', 'MSgrp'],
+ 'PoMon': ['CPoMon', 'IdPoMon', 'IPoMon', 'LrPoMon', 'JMon', 'MMon'],
+ 'IPoMon': ['CIPoMon', 'Polrim', 'IJMon', 'IMMon'],
+ 'IdPoSgrp': ['CIdPoSgrp', 'IdLrPoSgrp', 'IdPoMon', 'IdJSgrp', 'IdMSgrp'],
+ 'IdPoMon': ['CIdPoMon', 'IdLrPoMon', 'IdJMon', 'IdMMon'],
+ 'PoImpA': ['DivPos', 'LrPoMag', 'JImpA', 'MImpA'],
+ 'LrPoMag': ['RPoMag', 'LrPoSgrp', 'LrJMag', 'LrMMag'],
+ 'LrPoSgrp': ['RPoMon', 'LrPoMon', 'IdLrPoSgrp', 'RPoSgrp', 'LrJSgrp', 'LrMSgrp'],
+ 'LrPoMon': ['RPoMon', 'IdLrPoMon', 'Polrim', 'LrJMon', 'LrMMon'],
+ 'Polrim': ['Porim', 'ILrJMon', 'ILrMMon'],
+ 'IdLrPoSgrp': ['IdRPoSgrp', 'IdLrPoMon', 'IdLrJSgrp', 'IdLrMSgrp'],
+ 'IdLrPoMon': ['IdRPoMon', 'IdLrJMon', 'IdLrMMon'],
+ 'RPoUn': ['InPoMon', 'RJUn', 'RMUn'],
+ 'DivPos': ['CDivPos', 'RPoMag', 'DivJslat', 'DivMslat'],
+ 'RPoMag': ['CRPoMag', 'RPoSgrp', 'InPoMag', 'RJMag', 'RMMag'],
+ 'RPoSgrp': ['CRPoSgrp', 'RPoMon', 'IdRPoSgrp', 'InPoSgrp', 'RJSgrp', 'RMSgrp'],
+ 'RPoMon': ['CRPoMon', 'InPoMon', 'IdRPoMon', 'Porim', 'RJMon', 'RMMon'],
+ 'Porim': ['InPorim', 'Pocrim', 'IRJMon', 'IRMMon'],
+ 'IdRPoSgrp': ['CIdRPoSgrp', 'IdRPoMon', 'IdInPoSgrp', 'IdRJSgrp', 'IdRMSgrp'],
+ 'IdRPoMon': ['CIdRPoMon', 'IdInPoMon', 'IdRJMon', 'IdRMMon'],
+ 'GalPos': ['InPos', 'GalJslat', 'GalMslat'],
+ 'InPos': ['InPoMag', 'InLat'],
+ 'InPoMag': ['CyInPoMag', 'InPoSgrp', 'InLMag'],
+ 'InPoSgrp': ['CyInPoSgrp', 'InPoMon', 'IdInPoSgrp', 'InLSgrp'],
+ 'InPoMon': ['CyInPoMon', 'IInPoMon', 'PoGrp', 'IdInPoMon', 'InPorim', 'InLMon'],
+ 'InPorim': ['CyInPorim', 'IInLMon'],
+ 'CyInPoMag': ['CInPoMag', 'CyInPoSgrp', 'CyInLMag'],
+ 'CyInPoSgrp': ['CInPoSgrp', 'CyInPoMon', 'CyIdInPoSgrp', 'CyInLSgrp'],
+ 'CyInPoMon': ['CInPoMon', 'CyInPorim', 'CyIdInPoMon', 'PoGrp', 'CyInLMon'],
+ 'CyInPorim': ['InPocrim', 'CyIInLMon'],
+ 'PoGrp': ['AbPoGrp', 'LGrp'],
+ 'CPoSgrp': ['CIdPoSgrp', 'CRPoSgrp', 'CPoMon', 'CJSgrp', 'CMSgrp'],
+ 'CPoMon': ['CIdPoMon', 'CIPoMon', 'CRPoMon', 'CJMon', 'CMMon'],
+ 'CIPoMon': ['Pocrim', 'CIJMon', 'CIMMon'],
+ 'CIdPoSgrp': ['CIdRPoSgrp', 'CIdPoMon', 'CIdJSgrp', 'CIdMSgrp'],
+ 'CIdPoMon': ['CIdRPoMon', 'CIdJMon', 'CIdMMon'],
+ 'CDivPos': ['CRPoMag', 'BCK', 'CDivJslat', 'CDivMslat'],
+ 'BCK': ['Pocrim', 'HilA', 'BCKJslat', 'BCKMslat'],
+ 'CRPoMag': ['CRPoSgrp', 'CInPoMag', 'CRJMag', 'CRMMag'],
+ 'HilA': ['TarA'],
+ 'TarA': [],
+ 'CRPoSgrp': ['CInPoSgrp', 'CRPoMon', 'CIdRPoSgrp', 'CRJSgrp', 'CRMSgrp'],
+ 'CRPoMon': ['CInPoMon', 'Pocrim', 'CIdRPoMon', 'CRJMon', 'CRMMon'],
+ 'Pocrim': ['InPocrim', 'CIRJMon', 'CIRMMon'],
+ 'CIdRPoSgrp': ['CIdRPoMon', 'CIdInPoSgrp', 'CIdRJSgrp', 'CIdRMSgrp'],
+ 'CIdRPoMon': ['IdRPocrim', 'CIdInPoMon', 'CIdRJMon', 'CIdRMMon'],
+ 'CInPoMag': ['CInPoSgrp', 'CInLMag'],
+ 'CInPoSgrp': ['CInPoMon', 'CIdInPoSgrp', 'CInLSgrp'],
+ 'CInPoMon': ['InPocrim', 'AbPoGrp', 'CIdInPoMon', 'CInLMon'],
+ 'InPocrim': ['CIInLMon'],
+ 'AbPoGrp': ['AbLGrp'],
+
+ 'Jslat': ['Slat$_1$', 'Slat$_0$', 'pJslat', 'JUn', 'JNUn', 'JMag', 'JImpA', 'Lat'],
+ 'pJslat': ['JMon', 'ubJslat', 'lbJslat', 'pLat'],
+ 'lbJslat': ['IdSrng$_0$', 'bLat'],
+ 'ubJslat': ['IJMon', 'bLat'],
+ 'JUn': ['GalJslat', 'RJUn', 'LUn'],
+ 'JNUn': ['GalJslat', 'LNUn'],
+ 'GalJslat': ['GalLat'],
+ 'JMag': ['JSgrp', 'LrJMag', 'LMag'],
+ 'JSgrp': ['CJSgrp', 'JMon', 'IdJSgrp', 'LrJSgrp', 'LSgrp'],
+ 'JMon': ['CJMon', 'LrJMon', 'IdJMon', 'IJMon', 'IdSrng$_{01}$', 'LMon'],
+ 'IdSrng$_0$': ['IdSrng$_{01}$'], 
+ 'IdSrng$_{01}$': ['KA'],
+ 'KA': ['ActA', 'KLat'],
+ 'IJMon': ['CIJMon', 'ILrJMon', 'ILMon'],
+ 'IdJSgrp': ['CIdJSgrp', 'IdJMon', 'IdLrJSgrp', 'IdLSgrp'],
+ 'IdJMon': ['CIdJMon', 'IdLrJMon', 'IdLMon'],
+ 'JImpA': ['LrJMag', 'DivJslat', 'LImpA'],
+ 'LrJMag': ['RJMag', 'LrJSgrp', 'LrLMag'],
+ 'LrJSgrp': ['RJMon', 'LrJMon', 'IdLrJSgrp', 'RJSgrp', 'LrLSgrp'],
+ 'LrJMon': ['RJMon', 'ILrJMon', 'IdLrJMon', 'LrLMon'],
+ 'ILrJMon': ['IRJMon', 'ILrLMon'],
+ 'IdLrJSgrp': ['IdRJSgrp', 'IdLrJMon', 'IdLrLSgrp'],
+ 'IdLrJMon': ['IdRJMon', 'IdLrLMon'],
+ 'RJUn': ['InJMon', 'RLUn'],
+ 'DivJslat': ['CDivJslat', 'RJMag', 'DivLat'],
+ 'RJMag': ['CRJMag', 'RJSgrp', 'RLMag'],
+ 'RJSgrp': ['CRJSgrp', 'RJMon', 'IdRJSgrp', 'RLSgrp'],
+ 'RJMon': ['CRJMon', 'IdRJMon', 'IRJMon', 'RLMon'],
+ 'IRJMon': ['CIRJMon', 'IRLMon'],
+ 'IdRJSgrp': ['CIdRJSgrp', 'IdRJMon', 'IdRLSgrp'],
+ 'IdRJMon': ['CIdRJMon', 'IdRLMon'],
+ 'CJSgrp': ['CJMon', 'CRJSgrp', 'CIdJSgrp', 'CLSgrp'],
+ 'CJMon': ['CIJMon', 'CRJMon', 'CIdJMon', 'CLMon'],
+ 'CIJMon': ['CIRJMon', 'CILMon'],
+ 'CIdJSgrp': ['CIdJMon', 'CIdRJSgrp', 'CIdLSgrp'],
+ 'CIdJMon': ['CIdRJMon', 'CIdLMon'],
+ 'CDivJslat': ['CRJMag', 'BCKJslat', 'CDivLat'],
+ 'BCKJslat': ['BCKLat'],
+ 'CRJMag': ['CRJSgrp', 'CInJMag', 'CRLMag'],
+ 'CRJSgrp': ['CInJSgrp', 'CRJMon', 'CIdRJSgrp', 'CRLSgrp'],
+ 'CRJMon': ['CIRJMon', 'CIdRJMon', 'CRLMon'],
+ 'CIRJMon': ['IdCIRJMon', 'CIRLMon'],
+ 'CIdRJSgrp': ['CIdRJMon', 'CIdRLSgrp'],
+ 'CIdRJMon': ['IdRCIRJMon', 'CIdRLMon'],
+
+ 'Mslat': ['pMslat', 'MMag', 'MImpA', 'MUn', 'MNUn', 'Lat'],
+ 'pMslat': ['MMon', 'pLat'],
+ 'MUn': ['GalMslat', 'RMUn', 'LUn'],
+ 'MNUn': ['GalMslat', 'LNUn'],
+ 'GalMslat': ['GalLat'],
+ 'MMag': ['MSgrp', 'LrMMag', 'LMag'],
+ 'MSgrp': ['CMSgrp', 'IdMSgrp', 'LrMSgrp', 'LSgrp', 'MMon'],
+ 'MMon': ['CMMon', 'IdMMon', 'IMMon', 'LrMMon', 'LMon'],
+ 'IMMon': ['CIMMon', 'ILrMMon', 'ILMon'],
+ 'IdMSgrp': ['CIdMSgrp', 'IdLrMSgrp', 'IdMMon', 'IdLSgrp'],
+ 'IdMMon': ['CIdMMon', 'IdLrMMon', 'IdLMon'],
+ 'MImpA': ['DivMslat', 'LrMMag', 'LImpA'],
+ 'LrMMag': ['RMMag', 'LrMSgrp', 'LrLMag'],
+ 'LrMSgrp': ['IdLrMSgrp', 'LrMMon', 'RMSgrp', 'LrLSgrp'],
+ 'LrMMon': ['IdLrMMon', 'ILrMMon', 'RMMon', 'LrLMon'],
+ 'ILrMMon': ['IRMMon', 'ILrLMon', 'RtHp'],
+ 'RtHp': ['Hp'],
+ 'IdLrMSgrp': ['IdRMSgrp', 'IdLrMMon', 'IdLrLSgrp'],
+ 'IdLrMMon': ['IdRMMon', 'IdLrLMon'],
+ 'RMUn': ['InMMon', 'RLUn'],
+ 'DivMslat': ['CDivMslat', 'RMMag', 'DivLat'],
+ 'RMMag': ['CRMMag', 'RMSgrp', 'RLMag'],
+ 'RMSgrp': ['CRMSgrp', 'IdRMSgrp', 'RMMon', 'RLSgrp'],
+ 'RMMon': ['IdRMMon', 'IRMMon', 'CRMMon', 'RLMon'],
+ 'IRMMon': ['CIRMMon', 'IRLMon'],
+ 'IdRMSgrp': ['CIdRMSgrp', 'IdRMMon', 'IdRLSgrp'],
+ 'IdRMMon': ['CIdRMMon', 'IdRLMon'],
+ 'CMSgrp': ['CMMon', 'CIdMSgrp', 'CRMSgrp', 'CRLSgrp', 'CLSgrp'],
+ 'CMMon': ['CIMMon', 'CRMMon', 'CIdMMon', 'CLMon'],
+ 'CIMMon': ['CIRMMon', 'CILMon'],
+ 'CIdMSgrp': ['CIdMMon', 'CIdRMSgrp', 'CIdLSgrp'],
+ 'CIdMMon': ['CIdRMMon', 'CIdLMon'],
+ 'CDivMslat': ['CRMMag', 'BCKMslat', 'CDivLat'],
+ 'BCKMslat': ['BCKLat'],
+ 'CRMMag': ['CRMSgrp', 'CInMMag', 'CRLMag'],
+ 'CRMSgrp': ['CIdRMSgrp', 'CRMMon', 'CRLSgrp'],
+ 'CRMMon': ['CIdRMMon', 'CIRMMon', 'CRLMon'],
+ 'CIRMMon': ['CIRL', 'CIRLMon'],
+ 'Hp': ['WaHp', 'BrSlat', 'CGBL'],
+ 'CIdRMSgrp': ['CIdRMMon', 'CIdRLSgrp'],
+ 'CIdRMMon': ['IdRCIRMMon', 'CIdRLMon'],
+ 'BrSlat': ['BrA'],
+
+ 'Lat': ['pLat', 'LMag', 'LImpA', 'LNUn', 'LUn', 'ModLat', 'JsdLat','MsdLat', 'OLat'],
+ 'pLat': ['LMon', 'pDLat'],
+ 'bLat': ['bModLat', 'CplmLat', 'bDLat'],
+ 'LUn': ['RLUn', 'DLUn'],
+ 'LNUn': ['GalLat', 'DLNUn'],
+ 'LMag': ['LrLMag', 'LSgrp', 'DLMag', 'MultLat'],
+ 'LSgrp': ['CLSgrp', 'LrLSgrp', 'LMon', 'IdLSgrp', 'DLSgrp'],
+ 'LMon': ['CLMon', 'ILMon', 'LrLMon', 'IdLMon', 'DLMon'],
+ 'KLat': ['ActLat'],
+ 'ActLat': ['TrivA'],
+ 'ModLat': ['DLat', 'ComModLat'],
+ 'MultLat': ['LSgrp'],
+ 'ILMon': ['CILMon', 'ILrLMon', 'DILMon'],
+ 'IdLSgrp': ['CIdLSgrp', 'IdLrLSgrp', 'IdLMon', 'DIdLSgrp'],
+ 'IdLMon': ['CIdLMon', 'IdLrLMon', 'DIdLMon'],
+ 'LImpA': ['DivLat', 'LrLMag', 'DLImpA'],
+ 'LrLMag': ['RLMag', 'LrLSgrp', 'DLrLMag'],
+ 'LrLSgrp': ['R$ell$Sgrp', 'LrLMon', 'IdLrLSgrp', 'RLSgrp', 'DLrLSgrp'],
+ 'LrLMon': ['ILrLMon', 'RL', 'IdLrLMon', 'DLrLMon'],
+ 'ILrLMon': ['IRL', 'DILrLMon'],
+ 'IdLrLSgrp': ['IdRLSgrp', 'IdLrLMon', 'DIdLrLSgrp'],
+ 'IdLrLMon': ['IdRL', 'DIdLrLMon'],
+ 'RLUn': ['InLMon', 'DRLUn'],
+ 'DivLat': ['CDivLat', 'RLMag', 'DDivLat'],
+ 'RLMag': ['CRLMag', 'InLMag', 'RLSgrp', 'DRLMag'],
+ 'RLSgrp': ['CRLSgrp', 'InLSgrp', 'RL', 'IdRLSgrp', 'DRLSgrp'],
+ 'RL': ['bRL', 'CRL', 'IRL', 'IdRL', 'DRL', 'ActLat', 'CanRL', 'FL'],
+ 'bRL': ['ILLA', 'MALLA'],
+ 'IRL': ['CIRL', 'IInFL', 'DIRL'],
+ 'IdRLSgrp': ['CIdRLSgrp', 'IdInLSgrp', 'IdRL', 'DIdRLSgrp'],
+ 'IdRL': ['CIdRL', 'IdInFL', 'DIdRL'],
+ 'FL': ['bRL', 'FL$_e$', 'FL$_w$', 'FL$_c$', 'DFL', 'InFL'],
+ 'FL$_c$': ['FL$_{ec}$', 'DFL$_c$'],
+ 'FL$_e$': ['FL$_{ec}$', 'FL$_{ew}$', 'DFL', 'DFL$_e$', 'ILLA'],
+ 'FL$_w$': ['DFL$_w$'],
+ 'FL$_{ec}$': ['DFL$_{ec}$'],
+ 'FL$_{ew}$': ['DFL$_{ew}$'],
+ 'GalLat': ['InLat', 'DGalLat'],
+ 'InLat': ['InLMag', 'DInLat', 'Bilat'],
+ 'InLMag': ['CyInLMag', 'InLSgrp', 'DInLMag'],
+ 'InLSgrp': ['CyInLSgrp', 'InFL', 'IdInLSgrp', 'DInLSgrp'],
+ 'InFL': ['CyInFL', 'IInFL', 'IdInFL', 'DInFL'],
+ 'IInFL': ['CyIInFL', 'DIInFL'],
+ 'CyInLMag': ['CInLMag', 'CyInLSgrp', 'CyDInLMag'],
+ 'CyInLSgrp': ['CInLSgrp', 'CyInFL', 'CyIdInLSgrp', 'CyDInLSgrp'],
+ 'CyInFL': ['CInFL', 'CyIInFL', 'CyIdInFL', 'CyDInFL'],
+ 'CyIInFL': ['CIInFL', 'CyDIInFL'],
+ 'CLSgrp': ['CRLSgrp', 'CLMon', 'CIdLSgrp', 'CDLSgrp'],
+ 'CLMon': ['CILMon', 'CRL', 'CIdLMon', 'CDLMon'],
+ 'CILMon': ['CIRL', 'CDILMon'],
+ 'CIdLSgrp': ['CIdRLSgrp', 'CIdLMon', 'CDIdLSgrp'],
+ 'CIdLMon': ['CIdRL', 'CDIdLMon'],
+ 'CDivLat': ['CRLMag', 'CDDivLat'],
+ 'BCKLat': ['HA'],
+ 'CRLMag': ['CInLMag', 'CRLSgrp', 'CDRLMag'],
+ 'CRLSgrp': ['CInLSgrp', 'CRL', 'CIdRLSgrp', 'CDRLSgrp'],
+ 'CRL': ['CIRL', 'CInFL', 'CIdRL', 'CDRL'],
+ 'CIRL': ['CIInFL', 'CDIRL'],
+ 'CIdRLSgrp': ['CIdInLSgrp', 'CIdRL', 'CDIdRLSgrp'],
+ 'CIdRL': ['CIdInFL', 'CDIdRL'],
+ 'CIdInFL': ['CDIdInFL'],
+ 'CInLMag': ['CInLSgrp', 'CDInLMag'],
+ 'CInLSgrp': ['CInFL', 'CIdInLSgrp', 'CDInLSgrp'],
+ 'CInFL': ['CIInFL', 'CIdInFL', 'CDInFL', 'MALLA'],
+ 'CIInFL': ['CDIInFL'],
+ 'JsdLat': ['SdLat'],
+ 'MsdLat': ['SdLat'],
+ 'SdLat': ['NdLat'],
+ 'NdLat': ['ADLat'],
+ 'ADLat': ['DLat'],
+ 'CplmLat': ['CplmModLat'],
+ 'OLat': ['OModLat'],
+ 'OModLat': ['ModOLat'],
+ 'ModOLat': ['BA'],
+ 'SkLat': ['Lat', 'RecBnd'],
+ 'Bilat': ['TrivA'], # 'DBilat'],
+ 'CanRL': ['TrivA'],
+ 'CplmModLat': ['BA'],
+ 'FRng': ['TrivA'],
+ 'ILLA': ['LLA'],
+ 'LLA': ['TrivA'],
+ 'MALLA': ['LLA'],
+
+ 'DLat': ['bDLat', 'pDLat', 'DLUn', 'DLNUn', 'DLMag', 'DLImpA', 'ToLat', 'BA', 'pcDLat'],
+ 'pDLat': ['DLMon', 'bDLat', 'pToLat', 'pBA'],
+ 'bDLat': ['BA', 'bToLat', 'DpAlg', 'DdpAlg', 'BoolLat', 'OckA'],
+ 'DLUn': ['DGalLat', 'DRLUn', 'ToUn', 'BUn'],
+ 'DLNUn': ['DGalLat', 'ToNUn', 'BNUn', 'OckA'],
+ 'pcDLat': ['DpAlg'],
+ 'OckA': ['DmA'],
+ 'DmA': ['KLA', 'LA$_n$'],
+ 'DmMon': [],
+ 'DpAlg': ['DDbpAlg', 'StAlg'],
+ 'DdpAlg': ['DDblpAlg'],
+ 'DDblpAlg': ['DblStAlg'],
+ 'StAlg': ['DblStAlg'],
+ 'DblStAlg': ['BA'],
+ 'DLMag': ['DLSgrp', 'DLrLMag', 'ToMag', 'BMag'],
+ 'DLSgrp': ['CDLSgrp', 'DIdLSgrp', 'DLMon', 'DLrLSgrp', 'ToSgrp', 'BSgrp'],
+ 'DLMon': ['CDLMon', 'DIdLMon', 'DILMon', 'DLrLMon', 'ToMon', 'BMon'],
+ 'DILMon': ['ALat', 'CDILMon', 'DILrLMon', 'IToMon', 'BIMon'],
+ 'DIdLSgrp': ['CDIdLSgrp', 'DIdLMon', 'DIdLrLSgrp', 'IdToSgrp', 'BIdSgrp'],
+ 'DIdLMon': ['CDIdLMon', 'DIdLrLMon', 'IdToMon', 'BIdMon'],
+ 'DLImpA': ['CDLSgrp', 'LSgrp', 'DLrLMag', 'DDivLat', 'ToImpA', 'BImpA', 'ImpLat'],
+ 'DLrLMag': ['DRLMag', 'DLrLSgrp', 'LrToMag', 'BLrMag'],
+ 'DLrLSgrp': ['DR$ell$Sgrp', 'DLrLMon', 'DIdLrLSgrp', 'DRLSgrp', 'LrToSgrp', 'BLrSgrp'],
+ 'DLrLMon': ['DRL', 'DILrLMon', 'DIdLrLMon', 'LrToMon', 'BILrMon'],
+ 'DILrLMon': ['DIRL', 'ILrToMon', 'BIdLrSgrp'],
+ 'DIdLrLSgrp': ['DIdRLSgrp', 'DIdLrLMon', 'IdLrToSgrp', 'BIdLrMon'],
+ 'DIdLrLMon': ['DIdRL', 'IdLrToMon', 'BRUn'],
+ 'DRLUn': ['DInLMon', 'RToUn', 'BDivLat'],
+ 'DDivLat': ['DRLMag', 'CDDivLat', 'ToDivLat', 'BRMag'],
+ 'DRLMag': ['CDRLMag', 'DRLSgrp', 'DInLMag', 'RToMag', 'BRSgrp'],
+ 'DRLSgrp': ['CDRLSgrp', 'DRL', 'DIdRLSgrp', 'DInLSgrp', 'RToSgrp', 'BRL'],
+ 'DRL': ['CDRL', 'DFL$_e$', 'DIdRL', 'DIRL', 'DInFL', 'RToMon', 'BIRL', 'GBL'],
+ 'DIRL': ['CDIRL', 'DIInFL', 'IRToMon', 'BIdRSgrp'],
+ 'DIdRLSgrp': ['CDIdRLSgrp', 'DIdRL', 'DIdInLSgrp', 'IdRToSgrp', 'BIdRL'],
+ 'DIdRL': ['CDIdRL', 'DIdInFL', 'IdRToMon', 'BGalA'],
+ 'DGalLat': ['DInLat', 'GalToLat', 'BGalLat'],
+ 'DInLat': ['DInLMag', 'InToLat', 'BInMag'],
+ 'DInLMag': ['CyDInLMag', 'DInLSgrp', 'InToMag', 'BInSgrp'],
+ 'DInLSgrp': ['CyDInLSgrp', 'DInFL', 'DIdInLSgrp', 'InToSgrp', 'BInFL'],
+ 'DInFL': ['CyDInFL', 'DIInFL', 'DLGrp', 'DIdInFL', 'BIInFL'],
+ 'DIInFL': ['CyDIInFL', 'BCyInMag', 'psMV'],
+ 'CyDInLMag': ['CDInLMag', 'CyDInLSgrp', 'CyInToMag', 'BCyInSgrp'],
+ 'CyDInLSgrp': ['CDInLSgrp', 'CyDInFL', 'CyDIdInLSgrp',
+ 'CyInToSgrp', 'BCyInFL'],
+ 'CyDInFL': ['CDInFL', 'CyDIInFL', 'CyDIdInFL', 'LGrp', 'BCyIInFL'],
+ 'CyDIInFL': ['CDIInFL'],
+ 'LGrp': ['NVLGrp'],
+ 'RepLGrp': ['AbLGrp', 'ToGrp'],
+ 'CDLSgrp': ['CDIdLSgrp', 'CDLMon', 'CDRLSgrp', 'CToSgrp', 'BCMon'],
+ 'CDLMon': ['ALat', 'CDIdLMon', 'CDILMon', 'CDRL', 'CToMon', 'BCIMon'],
+ 'CDILMon': ['ALat', 'CDIRL', 'CIToMon', 'BCIdSgrp'],
+ 'CDIdLSgrp': ['CDIdLMon', 'CDIdRLSgrp', 'CIdToSgrp', 'BCIdMon'],
+ 'CDIdLMon': ['CDIdRL', 'CIdToMon', 'BCDivLat'],
+ 'CDDivLat': ['CDRLMag', 'CivToLat', 'BCRMag'],
+ 'CDRLMag': ['CDRLSgrp', 'CDInLMag', 'CRToMag'],
+ 'CDRLSgrp': ['CDInLSgrp', 'CDRL', 'CDIdRLSgrp', 'CRSlSgrp'],
+ 'CDRL': ['CDIRL', 'CDIdRL', 'CDInFL', 'CRSlMon', 'DunnMon'],
+ 'CDIRL': ['DICDIRL', 'CDIInFL', 'CIRSlMon'],
+ 'CDIdRLSgrp': ['CDIdRL', 'CDIdInLSgrp', 'CIdRSlSgrp'],
+ 'CDIdRL': ['DIdRCIRL', 'CDIdInFL', 'CIdRSlMon', 'BCInMag'],
+ 'CDInLMag': ['CDInLSgrp', 'CInToMag'],
+ 'CDInLSgrp': ['CDInFL', 'CDIdInLSgrp', 'CInSlSgrp'],
+ 'CDInFL': ['CDIInFL', 'AbLGrp', 'CDIdInFL', 'CInSlMon', 'DmMon'],
+ 'CDIInFL': ['CIInSlMon'],
+ 'AbLGrp': ['AbToGrp', 'LRng'],
+ 'GBL': ['BLA', 'GBLChn', 'GMV'],
+ 'GMV': ['MV', 'GMVChn'],
+ 'psMV': ['MV'],
+ 'WaHp': ['MV'],
+ 'BrA': ['HA', 'GBA'],
+ 'GBA': ['BA'],
+ 'BoolLat': ['BA'],
+ 'CRSlSgrp': ['CInSlSgrp', 'CIdRSlSgrp', 'CRSlMon', 'CRToSgrp', 'BCRMon'],
+ 'CRSlMon': ['CIdRSlMon', 'CIRSlMon', 'CInSlMon', 'CRToMon', 'BCIRMon'],
+ 'CIRSlMon': ['IMTL', 'CIRToMon', 'CIInSlMon', 'MTLA'],
+ 'MTLA': ['BLA', 'MTLChn'],
+ 'BLA': ['MV', 'HA', 'BLChn'],
+ 'MV': ['BA', 'MVChn'],
+ 'HA': ['GödA'],
+ 'GödA': ['BA', 'GödChn', 'BCIdRSgrp'],
+ 'CIdRSlSgrp': ['CIdInSlSgrp', 'CIdRSlMon', 'CIdRToSgrp', 'BCIdRMon'],
+ 'CIdRSlMon': ['CIdInSlMon', 'CIdRToMon', 'BCInSgrp'],
+ 'CInSlSgrp': ['CIdInSlSgrp', 'CInSlMon', 'CInToSgrp', 'BCInMon'],
+ 'CInSlMon': ['CIdInSlMon', 'IMTL', 'AbLGrp', 'CInToMon', 'CIInSlMon'],
+ 'DunnMon': ['CDIdRL', 'BCIInRMon', 'DmMon'],
+ 'IMTL': ['IMTLChn', 'CIInRToMon'],
+ 'ImpLat': ['GodA', 'MV', 'LGrp'],
+ 'KLA': ['BA'],
+ 'NVLGrp': ['RepLGrp'],
+ 'LA$_n$': ['BA'],
+ 'LRng': ['CLRng', 'ToRng', 'FRng'],
+ 'CLRng': ['CToRng'],
+
+ 'ToLat': ['pDLat', 'ToMag', 'ToImpA', 'ToNUn', 'ToUn', 'pToLat'],
+ 'pToLat': ['ToMon'],
+ 'ToMag': ['ToSgrp', 'LrToMag'],
+ 'ToSgrp': ['CToSgrp', 'IdToSgrp', 'LrToSgrp', 'ToMon'],
+ 'ToMon': ['CToMon', 'IdToMon', 'IToMon', 'LrToMon'],
+ 'IToMon': ['CIToMon', 'ILrToMon'],
+ 'IdToSgrp': ['CIdToSgrp', 'IdLrToSgrp', 'IdToMon'],
+ 'IdToMon': ['CIdToMon', 'IdLrToMon'],
+ 'ToImpA': ['ToDivLat', 'LrToMag'],
+ 'LrToMag': ['RToMag', 'LrToSgrp'],
+ 'LrToSgrp': ['IdLrToSgrp', 'RToSgrp', 'LrToMon'],
+ 'LrToMon': ['IdLrToMon', 'ILrToMon', 'RToMon'],
+ 'ILrToMon': ['IRToMon'],
+ 'IdLrToSgrp': ['IdRToSgrp', 'IdLrToMon'],
+ 'IdLrToMon': ['IdRToMon'],
+ 'RToUn': ['InToMon'],
+ 'ToDivLat': ['CToDivLat', 'RToMag'],
+ 'RToMag': ['CRToMag', 'InToMag', 'RToSgrp'],
+ 'RToSgrp': ['CRToSgrp', 'IdRToSgrp', 'InToSgrp', 'RToMon'],
+ 'RToMon': ['CRToMon', 'IdRToMon', 'IRToMon', 'InToMon'],
+ 'IRToMon': ['CIRToMon', 'IInRToMon'],
+ 'IdRToSgrp': ['CIdRToSgrp', 'IdInToSgrp', 'IdRToMon'],
+ 'IdRToMon': ['CIdRToMon', 'IdInToMon'],
+ 'ToUn': ['RToUn'],
+ 'ToNUn': ['GalToLat'],
+ 'GalToLat': ['InToLat'],
+ 'InToLat': ['InToMag'],
+ 'InToMag': ['CyInToMag', 'InToSgrp'],
+ 'InToSgrp': ['CyInToSgrp', 'IdInToSgrp', 'InToMon'],
+ 'InToMon': ['CyInToMon', 'IdInToMon', 'IInRToMon'],
+ 'IInRToMon': ['CyIInRToMon'],
+ 'CyInToMag': ['CInToMag', 'CyInToSgrp'],
+ 'CyInToSgrp': ['CInToSgrp', 'CyIdInToSgrp', 'CyInToMon'],
+ 'CyInToMon': ['CInToMon', 'CyIdInToMon', 'CyIInRToMon', 'ToGrp'],
+ 'CyIInRToMon': ['IMTLChn'],
+ 'ToGrp': ['AbToGrp'],
+ 'CToSgrp': ['CIdToSgrp', 'CRToSgrp', 'CToMon'],
+ 'CToMon': ['CIdToMon', 'CIToMon', 'CRToMon'],
+ 'CIToMon': ['CIRToMon'],
+ 'CIdToSgrp': ['CIdRToSgrp', 'CIdToMon'],
+ 'CIdToMon': ['CIdRToMon'],
+ 'CToDivLat': ['CRToMag'],
+ 'CRToMag': ['CInToMag', 'CRToSgrp'],
+ 'CRToSgrp': ['CInToSgrp', 'CIdRToSgrp', 'CRToMon'],
+ 'CRToMon': ['CIdRToMon', 'CIRToMon', 'CInToMon'],
+ 'CIRToMon': ['IMTLChn'],
+ 'CIdRToSgrp': ['CIdInToSgrp', 'CIdRToMon'],
+ 'CIdRToMon': ['CIdInToMon'],
+ 'CInToMag': ['CInToSgrp'],
+ 'CInToSgrp': ['CIdInToSgrp', 'CInToMon'],
+ 'CInToMon': ['CIdInToMon', 'IMTLChn', 'AbLGrp'],
+ 'IMTLChn': ['TrivA'],
+ 'AbToGrp': ['TrivA'],
+ 'ToRng': ['ToFld'],
+ 'CToRng': ['ToFld'],
+ 'ToFld': [],
+
+ 'BA': ['pBA', 'BMag', 'BImpA', 'BUn', 'BNUn'],
+ 'pBA': ['BMon'],
+ 'BUn': ['BRUn', 'MA', 'CA$_2$', 'BRMod'],
+ 'BNUn': ['BGalLat'],
+ 'MA': ['TA', 'MonA'],
+ 'TA': ['TrivA'],
+ 'MonA': ['TrivA'],
+ 'BMag': ['BSgrp', 'BLrMag'],
+ 'BSgrp': ['BCSgrp', 'BLrSgrp', 'BMon', 'BIdSgrp'],
+ 'BMon': ['BCMon', 'BIMon', 'BLrMon', 'BIdMon'],
+ 'BIMon': ['BCIMon', 'BILrMon'],
+ 'BIdSgrp': ['BCIdSgrp', 'BIdLrSgrp', 'BIdMon'],
+ 'BIdMon': ['BCIdMon', 'BIdLrMon'],
+ 'BImpA': ['BLrMag', 'BDivLat'],
+ 'BLrMag': ['BRMag', 'BLrSgrp'],
+ 'BLrSgrp': ['BRSgrp', 'BLrMon', 'BIdLrSgrp'],
+ 'BLrMon': ['BRL', 'BILrMon', 'BIdLrMon'],
+ 'BILrMon': ['BIRL'],
+ 'BIdLrSgrp': ['BIdRSgrp', 'BIdLrMon'],
+ 'BIdLrMon': ['BIdRL'],
+ 'BRUn': ['BInFL'],
+ 'BDivLat': ['BCDivLat', 'BRMag'],
+ 'BRMag': ['BCRMag', 'BInMag', 'BRSgrp', 'NA'],
+ 'BRSgrp': ['BCRSgrp', 'BInSgrp', 'BRL', 'BIdRSgrp'],
+ 'BRL': ['BCRL', 'BIRL', 'BInFL', 'BIdRL'],
+ 'BIRL': ['BCIRL', 'BIInFL', 'SeqA'],
+ 'BIdRSgrp': ['BCIdRSgrp', 'BIdInSgrp', 'BIdRL'],
+ 'BIdRL': ['BCIdRL', 'BIdInFL'],
+ 'BGalLat': ['BInLat'],
+ 'BInLat': ['BInMag'],
+ 'BInMag': ['BCyInMag', 'BInSgrp'],
+ 'BInSgrp': ['BCyInSgrp', 'BInFL', 'BIdInSgrp'],
+ 'BInFL': ['BCyInFL', 'BIInFL', 'BIdInFL'],
+ 'BIInFL': ['BCyIInFL'],
+ 'BCyInMag': ['BCInMag', 'BCyInSgrp'],
+ 'BCyInSgrp': ['BCInSgrp', 'BCyInFL', 'BCyIdInSgrp'],
+ 'BCyInFL': ['BCInFL', 'BCyIInFL', 'BCyIdInFL'],
+ 'BCyIInFL': ['BCIInFL'],
+ 'BCSgrp': ['BCRSgrp', 'BCMon', 'BCIdSgrp', 'BSlat'],
+ 'BCMon': ['BCIMon', 'BCRL', 'BCIdMon'],
+ 'BCIMon': ['BCIRL'],
+ 'BSlat': ['TrivA'],
+ 'BCIdSgrp': ['BCIdRSgrp', 'BCIdMon'],
+ 'BCIdMon': ['BCIdRL'],
+ 'BCDivLat': ['BCRMag'],
+ 'BCRMag': ['BCInMag', 'BCRSgrp'],
+ 'BCRSgrp': ['BCInSgrp', 'BCRL', 'BCIdRSgrp'],
+ 'BCRL': ['BCIRL', 'BCInFL', 'BCIdRL'],
+ 'BCIRL': ['BCIInFL'],
+ 'BCIdRSgrp': ['BCIdInSgrp', 'BCIdRL'],
+ 'BCIdRL': ['BCIdInFL'],
+ 'BCInMag': ['BCInSgrp'],
+ 'BCInSgrp': ['BCInFL', 'BCIdInSgrp'],
+ 'BCInFL': ['BCIInFL', 'BCIdInFL'],
+ 'BCIInFL': ['TrivA'],
+ 'CA$_2$': ['TrivA'],
+ 'SeqA': ['RA'],
+ 'NA': ['RA'],
+ 'RA': ['IRA'],
+ 'IRA': ['TrivA'],
+ 'BRMod': ['TrivA'],
+
+ 'Set': ['pSet', 'Unar', 'Mag'],
+ 'pSet': ['Mon'],
+ 'Unar': ['RUnar', 'Mset'],
+ 'AAlg': [],
+ 'BCI': [],
+ 'RtQgrp': ['RtLp', 'Qgrp'],
+ 'Qgrp': ['Lp', 'CQgrp', 'InMag', 'MouQgrp'],
+ 'RtLp': ['Lp'],
+ 'MouQgrp': ['MouLp'],
+ 'Lp': ['MouLp', 'LNeofld'],
+ 'MouLp': ['Grp'],
+ 'Shell': ['Srng$_{01}$'],
+ 'Mag': ['CnjMag', 'Sgrp', 'LtQgrp', 'DivA', 'OrdA', 'QtMag', 'MedMag', 'Qnd', 'BCI', 'RtQgrp', 'Shell', 'Dtoid'],
+ 'Bnd': ['IdMon', 'NBnd', 'RzBnd'],
+ 'NBnd': ['RecBnd'],
+ 'RecBnd': ['Slat'],
+ 'Sgrp': ['Bnd', 'LtCanSgrp', 'CSgrp', 'Mon', 'LrSgrp', 'Sgrp$_0$', 'RegSgrp'],
+ 'Sgrp$_0$': ['Srng$_0$'],
+ 'RegSgrp': ['Bnd', 'InvSgrp'],
+ 'InvSgrp': ['CliffSgrp', 'CInvSgrp'],
+ 'Mon': ['LtCanMon', 'CMon', 'IdMon'],
+ 'CanSgrp': ['CanMon', 'CanCSgrp'],
+ 'CanMon': ['CanCMon', 'Grp'],
+ 'Grp': ['PGrp', 'NlGrp', 'AbGrp', 'pGrp', 'NRng'],
+ 'AbpGrp': ['BGrp'],
+ 'CMag': ['CSgrp'],
+ 'CSgrp': ['Slat', 'CMon', 'CanCSgrp', 'qMV'],
+ 'LtCanSgrp': ['LtCanMon', 'CanSgrp'],
+ 'LtCanMon': ['CanMon'],
+ 'CanCSgrp': ['CanCMon'],
+ 'CInvSgrp': ['AbGrp', 'Slat'],
+ 'CMon': ['CanCMon', 'Slat$_1$', 'Srng'],
+ 'CanCMon': ['AbGrp'],
+ 'AbGrp': ['BGrp', 'pAbGrp', 'Rng'],
+ 'BGrp': ['TrivA'],
+ 'NFld': ['Fld'],
+ 'NRng': ['Rng', 'NRng$_1$'],
+ 'NRng$_1$': ['Rng$_1$'],
+ 'Neofld': ['DivRng'],
+ 'Srng': ['IdSrng', 'Srng$_1$', 'Srng$_0$', 'CSrng'],
+ 'Srng$_1$': ['Srng$_{01}$', 'Sfld'],
+ 'Srng$_0$': ['IdSrng$_0$'],
+ 'Srng$_{01}$': ['IdSrng$_{01}$', 'Rng$_1$'],
+ 'Rng': ['CRng', 'Rng$_1$'],
+ 'Rng$_1$': ['CRng$_1$', 'OreDom', 'NFld', 'RegRng'],
+ 'RegRng': ['DivRng', 'CRegRng'],
+ 'CRegRng': ['Fld'],
+ 'CSrng': ['CSrng$_1$', 'CSrng$_0$'],
+ 'CSrng$_1$': ['CSrng$_{01}$'],
+ 'CSrng$_0$': ['CSrng$_{01}$'],
+ 'CSrng$_{01}$': [],
+ 'CRng': ['CRng$_1$', 'Fld'],
+ 'CRng$_1$': ['BA', 'IntDom'],
+ 'IntDom': ['UFDom'],
+ 'DivRng': ['Fld'],
+ 'Sfld': ['Fld'],
+ 'Fld': [],
+ 'CnjMag': ['CMag'],
+ 'Dtoid': ['Slat'],
+ 'UFDom': ['PIDom'],
+ 'OreDom': ['DivRng'],
+ 'PIDom': ['EucDom'],
+ 'EucDom': ['Fld'],
+ 'Mset': ['Gset'],
+ 'Gset': ['RMod'],
+ 'RMod': ['FVec'],
+ 'FVec': ['NaA'],
+ 'JorA': [],
+ 'LNeofld': ['Neofld'],
+ 'BilinA': ['LieA', 'AAlg'],
+ 'CliffSgrp': ['Grp'],
+ 'LieA': [],
+ 'MedMag': [],
+ 'NlGrp': ['AbGrp'],
+ 'NaA': ['BilinA', 'JorA'],
+ 'OrdA': ['Bnd'],
+ 'pGrp': ['AbpGrp', 'CypGrp'],
+ 'Qnd': [],
+ 'qMV': ['MV','sqMV'],
+ 'sqMV': [],
+ 'QtMag': [],
+ 'TrivA': []}

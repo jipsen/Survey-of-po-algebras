@@ -1,0 +1,77 @@
+\documentclass[openany,twocolumn]{amsbook}
+\usepackage[utf8]{inputenc}
+\setcounter{tocdepth}{2}
+\title{A Survey of Partially Ordered Algebras}
+\author{Peter Jipsen and Bianca Newell}
+\author{\url{jipsen@chapman.edu}, \url{bnewell@chapman.edu}}
+\author{DRAFT version: \url{math.chapman.edu/~jipsen/Survey-of-po-algebras-DRAFT.pdf}}
+\address{\hspace{1.3in}Version 0.3, 2021 November 14, Chapman University}
+
+\usepackage{natbib}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=brown]{hyperref}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{longtable}
+%\usepackage{multicol}
+%\usepackage{supertabular}
+
+\newenvironment{definition}{\textbf{Definition}\par}{\par}
+\newenvironment{fulldefinition}{\textbf{Formal Definition}\par}{\par}
+\newenvironment{basicresults}{\textbf{Basic Results}\par}{\par}
+\newenvironment{examples}{\textbf{Examples}\par}{\par}
+\newenvironment{properties}{\textbf{Properties}\par}{\par}
+\newenvironment{finitemembers}{\textbf{Finite Members}\par}{\par}
+\newenvironment{smallmembers}{\textbf{Small Members} (not in any subclass)\par}{\par}
+\newenvironment{subclasses}{\textbf{Subclasses}\par}{\par}
+\newenvironment{superclasses}{\textbf{Superclasses}\par}{\hfill
+\hyperlink{tocontents}{Cont}$|$\hyperlink{Po}{Po}$|$\hyperlink{J}{J}$|$\hyperlink{M}{M}$|$\hyperlink{L}{L}$|$\hyperlink{D}{D}$|$\hyperlink{To}{To}$|$\hyperlink{B}{B}$|$\hyperlink{U}{U}$|$\hyperlink{toindex}{Ind}\par}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\cl}{\mathcal}
+\newcommand{\m}{\mathbf}
+\newcommand{\s}{\mathsf}
+\newcommand{\co}{\smallsmile}
+\newcommand{\ua}{{\uparrow}}
+\newcommand{\da}{{\downarrow}}
+\newcommand{\cemph}[1]{\textcolor{red}{{\em #1\/}}}
+%\renewcommand{\langle}{(}
+%\renewcommand{\rangle}{)}
+\newcommand{\alg}[1]{(#1)}
+\newcommand{\abbreviation}[1]{Abbreviation: \textbf{#1}}
+\newcommand{\dotdiv}{\mathbin{\overset{\raisebox{.5ex}{.}}{\smash{-}}}}
+\renewcommand{\emph}[1]{{\it #1\index{#1}\/}}
+\newcommand{\g}{\textcolor{blue}}
+\newcommand{\rd}[1]{\textcolor{red}{\boldsymbol{#1}}}
+\newcommand{\rn}{\rule[2pt]{3pt}{.5pt}\mkern1mu}
+\newcommand{\W}[1]{\makebox[12pt]{$#1$}}%
+\arraycolsep0pt
+
+\includeonly{
+SPoAchapters,
+SPoAappendix
+}
+\makeindex
+
+
+\begin{document}
+\tikzstyle{every node} = [draw, fill=white, circle, inner sep=0pt, minimum size=5pt]
+\tikzstyle{d} = [very thick]
+\tikzstyle{n} = [draw=none, rectangle, inner sep=2pt] %name style
+\tikzstyle{i} = [draw, fill=black, circle, inner sep=0pt, minimum size=5pt] %idempotent
+\onecolumn
+\maketitle
+
+\hypertarget{tocontents}{}
+\tableofcontents
+\include{SPoAchapters}
+\include{SPoAappendix}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\hypertarget{toindex}{}
+\printindex
+\end{document}
