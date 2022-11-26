@@ -1,0 +1,540 @@
+\BOOKMARK [0][-]{chapter.1}{Chapter 1. Introduction}{}% 1
+\BOOKMARK [1][-]{section*.1}{Disclaimer: This project is currently in a DRAFT stage. For some classes of algebras it may contain incomplete and/or incorrect information. In particular, the introduction needs to be \(re\)written.}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.1}{1. Universal algebra and category theory}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.1}{1.1. Algebras and subalgebras}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{1.2. Homomorphisms and isomorphisms}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{1.3. Products and HSP}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.4}{1.4. Term algebras and equational classes}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.5}{1.5. Varieties and equational logic}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.6}{1.6. Equivalence relations and congruences}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.7}{1.7. Homomorphic images and quotient algebras}{section.1.1}% 10
+\BOOKMARK [2][-]{subsection.1.1.8}{1.8. Subdirectly irreducible algebras}{section.1.1}% 11
+\BOOKMARK [1][-]{section.1.2}{2. Partially-ordered universal algebra}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.2.1}{2.1. Homomorphisms and isomorphisms}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.2}{2.2. Products and HSP}{section.1.2}% 14
+\BOOKMARK [1][-]{section.1.3}{3. Definitions of properties}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.4}{4. Comments, questions and open problems}{chapter.1}% 16
+\BOOKMARK [1][-]{section.1.5}{5. Naming of classes}{chapter.1}% 17
+\BOOKMARK [0][-]{chapter.2}{Chapter 2. Partially ordered algebras}{}% 18
+\BOOKMARK [1][-]{section.2.1}{1. Pos: Partially ordered sets}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.2}{2. pPos: Pointed posets}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.3}{3. PoUn: Partially ordered unars}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.4}{4. PoNUn: Partially ordered negated unars}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.5}{5. PoMag: Partially ordered magmas}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.6}{6. PoSgrp: Partially ordered semigroups}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.7}{7. PoMon: Partially ordered monoids}{chapter.2}% 25
+\BOOKMARK [1][-]{section.2.8}{8. IPoMon: Integral partially ordered monoids}{chapter.2}% 26
+\BOOKMARK [1][-]{section.2.9}{9. IdPoSgrp: Idempotent partially ordered semigroups}{chapter.2}% 27
+\BOOKMARK [1][-]{section.2.10}{10. IdPoMon: Idempotent partially ordered monoids}{chapter.2}% 28
+\BOOKMARK [1][-]{section.2.11}{11. PoImpA: Partially ordered implication algebras}{chapter.2}% 29
+\BOOKMARK [1][-]{section.2.12}{12. LrPoMag: Left-residuated partially ordered magmas}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.13}{13. LrPoSgrp: Left-residuated partially ordered semigroups}{chapter.2}% 31
+\BOOKMARK [1][-]{section.2.14}{14. LrPoMon: Left-residuated partially ordered monoids}{chapter.2}% 32
+\BOOKMARK [1][-]{section.2.15}{15. Polrim: Partially ordered left-residuated integral monoids}{chapter.2}% 33
+\BOOKMARK [1][-]{section.2.16}{16. IdLrPoSgrp: Idempotent left-residuated partially ordered semigroups}{chapter.2}% 34
+\BOOKMARK [1][-]{section.2.17}{17. IdLrPoMon: Idempotent left-residuated partially ordered monoids}{chapter.2}% 35
+\BOOKMARK [1][-]{section.2.18}{18. RPoUn: Residuated partially ordered unars}{chapter.2}% 36
+\BOOKMARK [1][-]{section.2.19}{19. DivPos: Division posets}{chapter.2}% 37
+\BOOKMARK [1][-]{section.2.20}{20. RPoMag: Residuated partially ordered magmas}{chapter.2}% 38
+\BOOKMARK [1][-]{section.2.21}{21. RPoSgrp: Residuated partially ordered semigroups}{chapter.2}% 39
+\BOOKMARK [1][-]{section.2.22}{22. RPoMon: Residuated partially ordered monoids}{chapter.2}% 40
+\BOOKMARK [1][-]{section.2.23}{23. Porim: Partially ordered residuated integral monoids}{chapter.2}% 41
+\BOOKMARK [1][-]{section.2.24}{24. IdRPoSgrp: Idempotent residuated partially ordered semigroups}{chapter.2}% 42
+\BOOKMARK [1][-]{section.2.25}{25. IdRPoMon: Idempotent residuated partially ordered monoids}{chapter.2}% 43
+\BOOKMARK [1][-]{section.2.26}{26. GalPos: Galois posets}{chapter.2}% 44
+\BOOKMARK [1][-]{section.2.27}{27. InPos: Involutive posets}{chapter.2}% 45
+\BOOKMARK [1][-]{section.2.28}{28. InPoMag: Involutive partially ordered magmas}{chapter.2}% 46
+\BOOKMARK [1][-]{section.2.29}{29. InPoSgrp: Involutive partially ordered semigroups}{chapter.2}% 47
+\BOOKMARK [1][-]{section.2.30}{30. InPoMon: Involutive partially ordered monoids}{chapter.2}% 48
+\BOOKMARK [1][-]{section.2.31}{31. InPorim: Involutive partially ordered integral monoids}{chapter.2}% 49
+\BOOKMARK [1][-]{section.2.32}{32. CyInPoMag: Cyclic involutive partially ordered magmas}{chapter.2}% 50
+\BOOKMARK [1][-]{section.2.33}{33. CyInPoSgrp: Cyclic involutive partially ordered semigroups}{chapter.2}% 51
+\BOOKMARK [1][-]{section.2.34}{34. CyInPoMon: Cyclic involutive partially ordered monoids}{chapter.2}% 52
+\BOOKMARK [1][-]{section.2.35}{35. CyInPorim: Cyclic involutive partially ordered integral monoids}{chapter.2}% 53
+\BOOKMARK [1][-]{section.2.36}{36. PoGrp: Partially ordered groups}{chapter.2}% 54
+\BOOKMARK [1][-]{section.2.37}{37. CPoSgrp: Commutative partially ordered semigroups}{chapter.2}% 55
+\BOOKMARK [1][-]{section.2.38}{38. CPoMon: Commutative partially ordered monoids}{chapter.2}% 56
+\BOOKMARK [1][-]{section.2.39}{39. CIPoMon: Commutative integral partially ordered monoids}{chapter.2}% 57
+\BOOKMARK [1][-]{section.2.40}{40. CIdPoSgrp: Commutative idempotent partially ordered semigroups}{chapter.2}% 58
+\BOOKMARK [1][-]{section.2.41}{41. CIdPoMon: Commutative idempotent partially ordered monoids}{chapter.2}% 59
+\BOOKMARK [1][-]{section.2.42}{42. CDivPos: Commutative division posets}{chapter.2}% 60
+\BOOKMARK [1][-]{section.2.43}{43. BCK: BCK-algebras}{chapter.2}% 61
+\BOOKMARK [1][-]{section.2.44}{44. CRPoMag: Commutative residuated partially ordered magmas}{chapter.2}% 62
+\BOOKMARK [1][-]{section.2.45}{45. HilA: Hilbert algebras}{chapter.2}% 63
+\BOOKMARK [1][-]{section.2.46}{46. TarA: Tarski algebras}{chapter.2}% 64
+\BOOKMARK [1][-]{section.2.47}{47. CRPoSgrp: Commutative residuated partially ordered semigroups}{chapter.2}% 65
+\BOOKMARK [1][-]{section.2.48}{48. CRPoMon: Commutative residuated partially ordered monoids}{chapter.2}% 66
+\BOOKMARK [1][-]{section.2.49}{49. Pocrim: Partially ordered commutative residuated integral monoids}{chapter.2}% 67
+\BOOKMARK [1][-]{section.2.50}{50. CIdRPoSgrp: Commutative idempotent residuated partially ordered semigroups}{chapter.2}% 68
+\BOOKMARK [1][-]{section.2.51}{51. CIdRPoMon: Commutative idempotent residuated partially ordered monoids}{chapter.2}% 69
+\BOOKMARK [1][-]{section.2.52}{52. CInPoMag: Commutative involutive partially ordered magmas}{chapter.2}% 70
+\BOOKMARK [1][-]{section.2.53}{53. CInPoSgrp: Commutative involutive partially ordered semigroups}{chapter.2}% 71
+\BOOKMARK [1][-]{section.2.54}{54. CInPoMon: Commutative involutive partially ordered monoids}{chapter.2}% 72
+\BOOKMARK [1][-]{section.2.55}{55. InPocrim: Involutive partially ordered commutative integral monoids}{chapter.2}% 73
+\BOOKMARK [1][-]{section.2.56}{56. AbPoGrp: Abelian partially ordered groups}{chapter.2}% 74
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. Join-semilattice-ordered algebras}{}% 75
+\BOOKMARK [1][-]{section.3.1}{1. Jslat: Join-semilattices}{chapter.3}% 76
+\BOOKMARK [1][-]{section.3.2}{2. pJslat: Pointed join-semilattices}{chapter.3}% 77
+\BOOKMARK [1][-]{section.3.3}{3. lbJslat: Lower-bounded join-semilattices}{chapter.3}% 78
+\BOOKMARK [1][-]{section.3.4}{4. ubJslat: Upper-bounded join-semilattices}{chapter.3}% 79
+\BOOKMARK [1][-]{section.3.5}{5. JUn: Join-semilattice-ordered unars}{chapter.3}% 80
+\BOOKMARK [1][-]{section.3.6}{6. JNUn: Join-semilattice-ordered negated unars}{chapter.3}% 81
+\BOOKMARK [1][-]{section.3.7}{7. GalJslat: Galois join-semilattices}{chapter.3}% 82
+\BOOKMARK [1][-]{section.3.8}{8. JMag: Join-semilattice-ordered magmas}{chapter.3}% 83
+\BOOKMARK [1][-]{section.3.9}{9. JSgrp: Join-semilattice-ordered semigroups}{chapter.3}% 84
+\BOOKMARK [1][-]{section.3.10}{10. JMon: Join-semilattice-ordered monoids}{chapter.3}% 85
+\BOOKMARK [1][-]{section.3.11}{11. IdSrng\1370: Idempotent semirings with zero}{chapter.3}% 86
+\BOOKMARK [1][-]{section.3.12}{12. IdSrng\1370\1371: Idempotent semirings with identity and zero}{chapter.3}% 87
+\BOOKMARK [1][-]{section.3.13}{13. KA: Kleene algebras}{chapter.3}% 88
+\BOOKMARK [1][-]{section.3.14}{14. IJMon: Integral join-semilattice-ordered monoids}{chapter.3}% 89
+\BOOKMARK [1][-]{section.3.15}{15. IdJSgrp: Idempotent join-semilattice-ordered semigroups}{chapter.3}% 90
+\BOOKMARK [1][-]{section.3.16}{16. IdJMon: Idempotent join-semilattice-ordered monoids}{chapter.3}% 91
+\BOOKMARK [1][-]{section.3.17}{17. JImpA: Join-semilattice-ordered implication algebras}{chapter.3}% 92
+\BOOKMARK [1][-]{section.3.18}{18. LrJMag: Left-residuated join-semilattice-ordered magmas}{chapter.3}% 93
+\BOOKMARK [1][-]{section.3.19}{19. LrJSgrp: Left-residuated join-semilattice-ordered semigroups}{chapter.3}% 94
+\BOOKMARK [1][-]{section.3.20}{20. LrJMon: Left-residuated join-semilattice-ordered monoids}{chapter.3}% 95
+\BOOKMARK [1][-]{section.3.21}{21. ILrJMon: Integral left-residuated join-semilattice-ordered monoids}{chapter.3}% 96
+\BOOKMARK [1][-]{section.3.22}{22. IdLrJSgrp: Idempotent left-residuated join-semilattice-ordered semigroups}{chapter.3}% 97
+\BOOKMARK [1][-]{section.3.23}{23. IdLrJMon: Idempotent left-residuated join-semilattice-ordered monoids}{chapter.3}% 98
+\BOOKMARK [1][-]{section.3.24}{24. RJUn: Residuated join-semilattice-ordered unars}{chapter.3}% 99
+\BOOKMARK [1][-]{section.3.25}{25. DivJslat: Division join-semilattices}{chapter.3}% 100
+\BOOKMARK [1][-]{section.3.26}{26. RJMag: Residuated join-semilattice-ordered magmas}{chapter.3}% 101
+\BOOKMARK [1][-]{section.3.27}{27. RJSgrp: Residuated join-semilattice-ordered semigroups}{chapter.3}% 102
+\BOOKMARK [1][-]{section.3.28}{28. RJMon: Residuated join-semilattice-ordered monoids}{chapter.3}% 103
+\BOOKMARK [1][-]{section.3.29}{29. IRJMon: Integral residuated join-semilattice-ordered monoids}{chapter.3}% 104
+\BOOKMARK [1][-]{section.3.30}{30. IdRJSgrp: Idempotent residuated join-semilattice-ordered semigroups}{chapter.3}% 105
+\BOOKMARK [1][-]{section.3.31}{31. IdRJMon: Idempotent residuated join-semilattice-ordered monoids}{chapter.3}% 106
+\BOOKMARK [1][-]{section.3.32}{32. CJSgrp: Commutative join-semilattice-ordered semigroups}{chapter.3}% 107
+\BOOKMARK [1][-]{section.3.33}{33. CJMon: Commutative join-semilattice-ordered monoids}{chapter.3}% 108
+\BOOKMARK [1][-]{section.3.34}{34. CIJMon: Commutative Integral join-semilattice-ordered monoids}{chapter.3}% 109
+\BOOKMARK [1][-]{section.3.35}{35. CIdJSgrp: Commutative idempotent join-semilattice-ordered semigroups}{chapter.3}% 110
+\BOOKMARK [1][-]{section.3.36}{36. CIdJMon: Commutative idempotent join-semilattice-ordered monoids}{chapter.3}% 111
+\BOOKMARK [1][-]{section.3.37}{37. CDivJslat: Commutative division join-semilattices}{chapter.3}% 112
+\BOOKMARK [1][-]{section.3.38}{38. BCKJslat: BCK-join-semilattices}{chapter.3}% 113
+\BOOKMARK [1][-]{section.3.39}{39. CRJMag: Commutative residuated join-semilattice-ordered magmas}{chapter.3}% 114
+\BOOKMARK [1][-]{section.3.40}{40. CRJSgrp: Commutative residuated join-semilattice-ordered semigroups}{chapter.3}% 115
+\BOOKMARK [1][-]{section.3.41}{41. CRJMon: Commutative residuated join-semilattice-ordered monoids}{chapter.3}% 116
+\BOOKMARK [1][-]{section.3.42}{42. CIRJMon: Commutative integral residuated join-semilattice-ordered monoids}{chapter.3}% 117
+\BOOKMARK [1][-]{section.3.43}{43. CIdRJSgrp: Commutative idempotent residuated join-semilattice-ordered semigroups}{chapter.3}% 118
+\BOOKMARK [1][-]{section.3.44}{44. CIdRJMon: Commutative idempotent residuated join-semilattice-ordered monoids}{chapter.3}% 119
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. Meet-semilattice-ordered algebras}{}% 120
+\BOOKMARK [1][-]{section.4.1}{1. Mslat: Meet-semilattices}{chapter.4}% 121
+\BOOKMARK [1][-]{section.4.2}{2. pMslat: Pointed meet-semilattices}{chapter.4}% 122
+\BOOKMARK [1][-]{section.4.3}{3. MUn: Meet-semilattice-ordered unars}{chapter.4}% 123
+\BOOKMARK [1][-]{section.4.4}{4. MNUn: Meet-semilattice-ordered negated unars}{chapter.4}% 124
+\BOOKMARK [1][-]{section.4.5}{5. GalMslat: Galois meet-semilattices}{chapter.4}% 125
+\BOOKMARK [1][-]{section.4.6}{6. MMag: Meet-semilattice-ordered magmas}{chapter.4}% 126
+\BOOKMARK [1][-]{section.4.7}{7. MSgrp: Meet-semilattice-ordered semigroups}{chapter.4}% 127
+\BOOKMARK [1][-]{section.4.8}{8. MMon: Meet-semilattice-ordered monoids}{chapter.4}% 128
+\BOOKMARK [1][-]{section.4.9}{9. IMMon: Integral meet-semilattice-ordered monoids}{chapter.4}% 129
+\BOOKMARK [1][-]{section.4.10}{10. IdMSgrp: Idempotent meet-semilattice-ordered semigroups}{chapter.4}% 130
+\BOOKMARK [1][-]{section.4.11}{11. IdMMon: Idempotent meet-semilattice-ordered monoids}{chapter.4}% 131
+\BOOKMARK [1][-]{section.4.12}{12. MImpA: Meet-semilattice-ordered implication algebras}{chapter.4}% 132
+\BOOKMARK [1][-]{section.4.13}{13. LrMMag: Left-residuated meet-semilattice-ordered magmas}{chapter.4}% 133
+\BOOKMARK [1][-]{section.4.14}{14. LrMSgrp: Left-residuated meet-semilattice-ordered semigroups}{chapter.4}% 134
+\BOOKMARK [1][-]{section.4.15}{15. LrMMon: Left-residuated meet-semilattice-ordered monoids}{chapter.4}% 135
+\BOOKMARK [1][-]{section.4.16}{16. ILrMMon: Integral left-residuated meet-semilattice-ordered monoids}{chapter.4}% 136
+\BOOKMARK [1][-]{section.4.17}{17. RtHp: Right hoops}{chapter.4}% 137
+\BOOKMARK [1][-]{section.4.18}{18. IdLrMSgrp: Idempotent left-residuated meet-semilattice-ordered semigroups}{chapter.4}% 138
+\BOOKMARK [1][-]{section.4.19}{19. IdLrMMon: Idempotent left-residuated meet-semilattice-ordered monoids}{chapter.4}% 139
+\BOOKMARK [1][-]{section.4.20}{20. RMUn: Residuated meet-semilattice-ordered unars}{chapter.4}% 140
+\BOOKMARK [1][-]{section.4.21}{21. DivMslat: Division meet-semilattices}{chapter.4}% 141
+\BOOKMARK [1][-]{section.4.22}{22. RMMag: Residuated meet-semilattice-ordered magmas}{chapter.4}% 142
+\BOOKMARK [1][-]{section.4.23}{23. RMSgrp: Residuated meet-semilattice-ordered semigroups}{chapter.4}% 143
+\BOOKMARK [1][-]{section.4.24}{24. RMMon: Residuated meet-semilattice-ordered monoids}{chapter.4}% 144
+\BOOKMARK [1][-]{section.4.25}{25. IRMMon: Meet-semilattice-ordered residuated integral monoids}{chapter.4}% 145
+\BOOKMARK [1][-]{section.4.26}{26. IdRMSgrp: Idempotent residuated meet-semilattice-ordered semigroups}{chapter.4}% 146
+\BOOKMARK [1][-]{section.4.27}{27. IdRMMon: Idempotent residuated meet-semilattice-ordered monoids}{chapter.4}% 147
+\BOOKMARK [1][-]{section.4.28}{28. CMSgrp: Commutative meet-semilattice-ordered semigroups}{chapter.4}% 148
+\BOOKMARK [1][-]{section.4.29}{29. CMMon: Commutative meet-semilattice-ordered monoids}{chapter.4}% 149
+\BOOKMARK [1][-]{section.4.30}{30. CIMMon: Commutative Integral meet-semilattice-ordered monoids}{chapter.4}% 150
+\BOOKMARK [1][-]{section.4.31}{31. CIdMSgrp: Commutative idempotent meet-semilattice-ordered semigroups}{chapter.4}% 151
+\BOOKMARK [1][-]{section.4.32}{32. CIdMMon: Commutative idempotent meet-semilattice-ordered monoids}{chapter.4}% 152
+\BOOKMARK [1][-]{section.4.33}{33. CDivMslat: Commutative division meet-semilattices}{chapter.4}% 153
+\BOOKMARK [1][-]{section.4.34}{34. BCKMslat: BCK-meet-semilattices}{chapter.4}% 154
+\BOOKMARK [1][-]{section.4.35}{35. CRMMag: Commutative residuated meet-semilattice-ordered magmas}{chapter.4}% 155
+\BOOKMARK [1][-]{section.4.36}{36. CRMSgrp: Commutative residuated meet-semilattice-ordered semigroups}{chapter.4}% 156
+\BOOKMARK [1][-]{section.4.37}{37. CRMMon: Commutative residuated meet-semilattice-ordered monoids}{chapter.4}% 157
+\BOOKMARK [1][-]{section.4.38}{38. CIRMMon: Commutative integral residuated meet-semilattice-ordered monoids}{chapter.4}% 158
+\BOOKMARK [1][-]{section.4.39}{39. Hp: Hoops}{chapter.4}% 159
+\BOOKMARK [1][-]{section.4.40}{40. CIdRMSgrp: Commutative idempotent residuated meet-semilattice-ordered semigroups}{chapter.4}% 160
+\BOOKMARK [1][-]{section.4.41}{41. CIdRMMon: Commutative idempotent residuated meet-semilattice-ordered monoids}{chapter.4}% 161
+\BOOKMARK [1][-]{section.4.42}{42. BrSlat: Brouwerian semilattices}{chapter.4}% 162
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Lattice-ordered algebras}{}% 163
+\BOOKMARK [1][-]{section.5.1}{1. Lat: Lattices}{chapter.5}% 164
+\BOOKMARK [1][-]{section.5.2}{2. pLat: Pointed lattices}{chapter.5}% 165
+\BOOKMARK [1][-]{section.5.3}{3. bLat: Bounded lattices}{chapter.5}% 166
+\BOOKMARK [1][-]{section.5.4}{4. LUn: Lattice-ordered unars}{chapter.5}% 167
+\BOOKMARK [1][-]{section.5.5}{5. LNUn: Lattice-ordered negated unars}{chapter.5}% 168
+\BOOKMARK [1][-]{section.5.6}{6. LMag: Lattice-ordered magmas}{chapter.5}% 169
+\BOOKMARK [1][-]{section.5.7}{7. LSgrp: Lattice-ordered semigroups}{chapter.5}% 170
+\BOOKMARK [1][-]{section.5.8}{8. LMon: Lattice-ordered monoids}{chapter.5}% 171
+\BOOKMARK [1][-]{section.5.9}{9. KLat: Kleene lattices}{chapter.5}% 172
+\BOOKMARK [1][-]{section.5.10}{10. ActLat: Action lattices}{chapter.5}% 173
+\BOOKMARK [1][-]{section.5.11}{11. ModLat: Modular lattices}{chapter.5}% 174
+\BOOKMARK [1][-]{section.5.12}{12. MultLat: Multiplicative lattices}{chapter.5}% 175
+\BOOKMARK [1][-]{section.5.13}{13. ILMon: Integral lattice-ordered monoids}{chapter.5}% 176
+\BOOKMARK [1][-]{section.5.14}{14. IdLSgrp: Idempotent lattice-ordered semigroups}{chapter.5}% 177
+\BOOKMARK [1][-]{section.5.15}{15. IdLMon: Idempotent lattice-ordered monoids}{chapter.5}% 178
+\BOOKMARK [1][-]{section.5.16}{16. LImpA: Lattice-ordered implication algebras}{chapter.5}% 179
+\BOOKMARK [1][-]{section.5.17}{17. LrLMag: Left-residuated lattice-ordered magmas}{chapter.5}% 180
+\BOOKMARK [1][-]{section.5.18}{18. LrLSgrp: Left-residuated lattice-ordered semigroups}{chapter.5}% 181
+\BOOKMARK [1][-]{section.5.19}{19. LrLMon: Left-residuated lattice-ordered monoids}{chapter.5}% 182
+\BOOKMARK [1][-]{section.5.20}{20. ILrLMon: Integral left-residuated lattice-ordered monoids}{chapter.5}% 183
+\BOOKMARK [1][-]{section.5.21}{21. IdLrLSgrp: Idempotent left-residuated lattice-ordered semigroups}{chapter.5}% 184
+\BOOKMARK [1][-]{section.5.22}{22. IdLrLMon: Idempotent left-residuated lattice-ordered monoids}{chapter.5}% 185
+\BOOKMARK [1][-]{section.5.23}{23. RLUn: Residuated lattice-ordered unars}{chapter.5}% 186
+\BOOKMARK [1][-]{section.5.24}{24. DivLat: Division lattices}{chapter.5}% 187
+\BOOKMARK [1][-]{section.5.25}{25. RLMag: Residuated lattice-ordered magmas}{chapter.5}% 188
+\BOOKMARK [1][-]{section.5.26}{26. RLSgrp: Residuated lattice-ordered semigroups}{chapter.5}% 189
+\BOOKMARK [1][-]{section.5.27}{27. RL: Residuated lattices}{chapter.5}% 190
+\BOOKMARK [1][-]{section.5.28}{28. bRL: Bounded residuated lattices}{chapter.5}% 191
+\BOOKMARK [1][-]{section.5.29}{29. IRL: Integral residuated lattices}{chapter.5}% 192
+\BOOKMARK [1][-]{section.5.30}{30. IdRLSgrp: Idempotent residuated lattice-ordered semigroups}{chapter.5}% 193
+\BOOKMARK [1][-]{section.5.31}{31. IdRL: Idempotent residuated lattices}{chapter.5}% 194
+\BOOKMARK [1][-]{section.5.32}{32. FL: Full Lambek algebras}{chapter.5}% 195
+\BOOKMARK [1][-]{section.5.33}{33. FLc: Full Lambek algebras with contraction}{chapter.5}% 196
+\BOOKMARK [1][-]{section.5.34}{34. FLe: Full Lambek algebras with exchange}{chapter.5}% 197
+\BOOKMARK [1][-]{section.5.35}{35. FLw: Full Lambek algebras with weakening}{chapter.5}% 198
+\BOOKMARK [1][-]{section.5.36}{36. FLec: Full Lambek algebras with exchange and contraction}{chapter.5}% 199
+\BOOKMARK [1][-]{section.5.37}{37. FLew: Full Lambek algebras with exchange and weakening}{chapter.5}% 200
+\BOOKMARK [1][-]{section.5.38}{38. GalLat: Galois lattices}{chapter.5}% 201
+\BOOKMARK [1][-]{section.5.39}{39. InLat: Involutive lattices}{chapter.5}% 202
+\BOOKMARK [1][-]{section.5.40}{40. InLMag: Involutive lattice-ordered magmas}{chapter.5}% 203
+\BOOKMARK [1][-]{section.5.41}{41. InLSgrp: Involutive lattice-ordered semigroups}{chapter.5}% 204
+\BOOKMARK [1][-]{section.5.42}{42. InFL: Involutive FL-algebras}{chapter.5}% 205
+\BOOKMARK [1][-]{section.5.43}{43. IInFL: Integral involutive FL-algebras}{chapter.5}% 206
+\BOOKMARK [1][-]{section.5.44}{44. CyInLMag: Cyclic involutive lattice-ordered magmas}{chapter.5}% 207
+\BOOKMARK [1][-]{section.5.45}{45. CyInLSgrp: Cyclic involutive lattice-ordered semigroups}{chapter.5}% 208
+\BOOKMARK [1][-]{section.5.46}{46. CyInFL: Cyclic involutive FL-algebras}{chapter.5}% 209
+\BOOKMARK [1][-]{section.5.47}{47. CyIInFL: Cyclic involutive lattice-ordered integral monoids}{chapter.5}% 210
+\BOOKMARK [1][-]{section.5.48}{48. CLSgrp: Commutative lattice-ordered semigroups}{chapter.5}% 211
+\BOOKMARK [1][-]{section.5.49}{49. CLMon: Commutative lattice-ordered monoids}{chapter.5}% 212
+\BOOKMARK [1][-]{section.5.50}{50. CILMon: Commutative Integral lattice-ordered monoids}{chapter.5}% 213
+\BOOKMARK [1][-]{section.5.51}{51. CIdLSgrp: Commutative idempotent lattice-ordered semigroups}{chapter.5}% 214
+\BOOKMARK [1][-]{section.5.52}{52. CIdLMon: Commutative idempotent lattice-ordered monoids}{chapter.5}% 215
+\BOOKMARK [1][-]{section.5.53}{53. CDivLat: Commutative division lattices}{chapter.5}% 216
+\BOOKMARK [1][-]{section.5.54}{54. BCKLat: BCK-lattices}{chapter.5}% 217
+\BOOKMARK [1][-]{section.5.55}{55. CRLMag: Commutative residuated lattice-ordered magmas}{chapter.5}% 218
+\BOOKMARK [1][-]{section.5.56}{56. CRLSgrp: Commutative residuated lattice-ordered semigroups}{chapter.5}% 219
+\BOOKMARK [1][-]{section.5.57}{57. CRL: Commutative residuated lattices}{chapter.5}% 220
+\BOOKMARK [1][-]{section.5.58}{58. CIRL: Commutative integral residuated lattices}{chapter.5}% 221
+\BOOKMARK [1][-]{section.5.59}{59. CIdRLSgrp: Commutative idempotent residuated lattice-ordered semigroups}{chapter.5}% 222
+\BOOKMARK [1][-]{section.5.60}{60. CIdRL: Commutative idempotent residuated lattices}{chapter.5}% 223
+\BOOKMARK [1][-]{section.5.61}{61. CIdInFL: Commutative idempotent involutive FL-algebras}{chapter.5}% 224
+\BOOKMARK [1][-]{section.5.62}{62. CInLMag: Commutative involutive lattice-ordered magmas}{chapter.5}% 225
+\BOOKMARK [1][-]{section.5.63}{63. CInLSgrp: Commutative involutive lattice-ordered semigroups}{chapter.5}% 226
+\BOOKMARK [1][-]{section.5.64}{64. CInFL: Commutative involutive FL-algebras}{chapter.5}% 227
+\BOOKMARK [1][-]{section.5.65}{65. CIInFL: Commutative integral involutive FL-algebras}{chapter.5}% 228
+\BOOKMARK [1][-]{section.5.66}{66. JsdLat: Join-semidistributive lattices}{chapter.5}% 229
+\BOOKMARK [1][-]{section.5.67}{67. MsdLat: Meet-semidistributive lattices}{chapter.5}% 230
+\BOOKMARK [1][-]{section.5.68}{68. SdLat: Semidistributive lattices}{chapter.5}% 231
+\BOOKMARK [1][-]{section.5.69}{69. NdLat: Neardistributive lattices}{chapter.5}% 232
+\BOOKMARK [1][-]{section.5.70}{70. AdLat: Almost distributive lattices}{chapter.5}% 233
+\BOOKMARK [1][-]{section.5.71}{71. CplmLat: Complemented lattices}{chapter.5}% 234
+\BOOKMARK [1][-]{section.5.72}{72. OLat: Ortholattices}{chapter.5}% 235
+\BOOKMARK [1][-]{section.5.73}{73. OModLat: Orthomodular lattices}{chapter.5}% 236
+\BOOKMARK [1][-]{section.5.74}{74. ModOLat: Modular ortholattices}{chapter.5}% 237
+\BOOKMARK [1][-]{section.5.75}{75. Bilat: Bilattices}{chapter.5}% 238
+\BOOKMARK [1][-]{section.5.76}{76. CanRL: Cancellative residuated lattices}{chapter.5}% 239
+\BOOKMARK [1][-]{section.5.77}{77. CplmModLat: Complemented modular lattices}{chapter.5}% 240
+\BOOKMARK [1][-]{section.5.78}{78. FRng: Function rings}{chapter.5}% 241
+\BOOKMARK [1][-]{section.5.79}{79. ILLA: Intuitionistic linear logic algebras}{chapter.5}% 242
+\BOOKMARK [1][-]{section.5.80}{80. LLA: Linear logic algebras}{chapter.5}% 243
+\BOOKMARK [1][-]{section.5.81}{81. MALLA: Multiplicative additive linear logic algebras}{chapter.5}% 244
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Distributive lattice-ordered algebras}{}% 245
+\BOOKMARK [1][-]{section.6.1}{1. DLat: Distributive lattices}{chapter.6}% 246
+\BOOKMARK [1][-]{section.6.2}{2. pDLat: Pointed distributive lattices}{chapter.6}% 247
+\BOOKMARK [1][-]{section.6.3}{3. bDLat: Bounded distributive lattices}{chapter.6}% 248
+\BOOKMARK [1][-]{section.6.4}{4. DLUn: Distributive lattice-ordered unars}{chapter.6}% 249
+\BOOKMARK [1][-]{section.6.5}{5. DLNUn: Distributive lattice-ordered negated unars}{chapter.6}% 250
+\BOOKMARK [1][-]{section.6.6}{6. pcDLat: Pseudocomplemented distributive lattices}{chapter.6}% 251
+\BOOKMARK [1][-]{section.6.7}{7. OckA: Ockham algebras}{chapter.6}% 252
+\BOOKMARK [1][-]{section.6.8}{8. DmA: De Morgan algebras}{chapter.6}% 253
+\BOOKMARK [1][-]{section.6.9}{9. DmMon: De Morgan monoids}{chapter.6}% 254
+\BOOKMARK [1][-]{section.6.10}{10. DpAlg: Distributive p-algebras}{chapter.6}% 255
+\BOOKMARK [1][-]{section.6.11}{11. DdpAlg: Distributive dual p-algebras}{chapter.6}% 256
+\BOOKMARK [1][-]{section.6.12}{12. DDblpAlg: Distributive double p-algebras}{chapter.6}% 257
+\BOOKMARK [1][-]{section.6.13}{13. StAlg: Stone algebras}{chapter.6}% 258
+\BOOKMARK [1][-]{section.6.14}{14. DblStAlg: Double Stone algebras}{chapter.6}% 259
+\BOOKMARK [1][-]{section.6.15}{15. DLMag: Distributive lattice-ordered magmas}{chapter.6}% 260
+\BOOKMARK [1][-]{section.6.16}{16. DLSgrp: Distributive lattice-ordered semigroups}{chapter.6}% 261
+\BOOKMARK [1][-]{section.6.17}{17. DLMon: Distributive lattice-ordered monoids}{chapter.6}% 262
+\BOOKMARK [1][-]{section.6.18}{18. DILMon: Distributive integral lattice-ordered monoids}{chapter.6}% 263
+\BOOKMARK [1][-]{section.6.19}{19. DIdLSgrp: Distributive idempotent lattice-ordered semigroups}{chapter.6}% 264
+\BOOKMARK [1][-]{section.6.20}{20. DIdLMon: Distributive idempotent lattice-ordered monoids}{chapter.6}% 265
+\BOOKMARK [1][-]{section.6.21}{21. DLImpA: Distributive lattice-ordered implication algebras}{chapter.6}% 266
+\BOOKMARK [1][-]{section.6.22}{22. DLrLMag: Distributive left-residuated lattice-ordered magmas}{chapter.6}% 267
+\BOOKMARK [1][-]{section.6.23}{23. DLrLSgrp: Distributive left-residuated lattice-ordered semigroups}{chapter.6}% 268
+\BOOKMARK [1][-]{section.6.24}{24. DLrLMon: Distributive left-residuated lattice-ordered monoids}{chapter.6}% 269
+\BOOKMARK [1][-]{section.6.25}{25. DILrLMon: Distributive integral left-residuated lattice-ordered monoids}{chapter.6}% 270
+\BOOKMARK [1][-]{section.6.26}{26. DIdLrLSgrp: Distributive idempotent left-residuated lattice-ordered semigroups}{chapter.6}% 271
+\BOOKMARK [1][-]{section.6.27}{27. DIdLrLMon: Distributive idempotent left-residuated lattice-ordered monoids}{chapter.6}% 272
+\BOOKMARK [1][-]{section.6.28}{28. DRLUn: Distributive residuated lattice-ordered unars}{chapter.6}% 273
+\BOOKMARK [1][-]{section.6.29}{29. DDivLat: Distributive division lattices}{chapter.6}% 274
+\BOOKMARK [1][-]{section.6.30}{30. DRLMag: Distributive residuated lattice-ordered magmas}{chapter.6}% 275
+\BOOKMARK [1][-]{section.6.31}{31. DRLSgrp: Distributive residuated lattice-ordered semigroups}{chapter.6}% 276
+\BOOKMARK [1][-]{section.6.32}{32. DRL: Distributive residuated lattices}{chapter.6}% 277
+\BOOKMARK [1][-]{section.6.33}{33. DIRL: Distributive integral residuated lattices}{chapter.6}% 278
+\BOOKMARK [1][-]{section.6.34}{34. DIdRLSgrp: Distributive idempotent residuated lattice-ordered semigroups}{chapter.6}% 279
+\BOOKMARK [1][-]{section.6.35}{35. DIdRL: Distributive idempotent residuated lattices}{chapter.6}% 280
+\BOOKMARK [1][-]{section.6.36}{36. DGalLat: Distributive Galois lattices}{chapter.6}% 281
+\BOOKMARK [1][-]{section.6.37}{37. DInLat: Distributive involutive lattices}{chapter.6}% 282
+\BOOKMARK [1][-]{section.6.38}{38. DInLMag: Distributive involutive lattice-ordered magmas}{chapter.6}% 283
+\BOOKMARK [1][-]{section.6.39}{39. DInLSgrp: Distributive involutive lattice-ordered semigroups}{chapter.6}% 284
+\BOOKMARK [1][-]{section.6.40}{40. DInFL: Distributive involutive FL-algebras}{chapter.6}% 285
+\BOOKMARK [1][-]{section.6.41}{41. DIInFL: Distributive integral involutive FL-algebras}{chapter.6}% 286
+\BOOKMARK [1][-]{section.6.42}{42. CyDInLMag: Cyclic distributive involutive lattice-ordered magmas}{chapter.6}% 287
+\BOOKMARK [1][-]{section.6.43}{43. CyDInLSgrp: Cyclic distributive involutive lattice-ordered semigroups}{chapter.6}% 288
+\BOOKMARK [1][-]{section.6.44}{44. CyDInFL: Cyclic distributive involutive FL-algebras}{chapter.6}% 289
+\BOOKMARK [1][-]{section.6.45}{45. CyDIInFL: Cyclic distributive involutive lattice-ordered integral monoids}{chapter.6}% 290
+\BOOKMARK [1][-]{section.6.46}{46. LGrp: Lattice-ordered groups}{chapter.6}% 291
+\BOOKMARK [1][-]{section.6.47}{47. RepLGrp: Representable lattice-ordered groups}{chapter.6}% 292
+\BOOKMARK [1][-]{section.6.48}{48. CDLSgrp: Commutative distributive lattice-ordered semigroups}{chapter.6}% 293
+\BOOKMARK [1][-]{section.6.49}{49. CDLMon: Commutative distributive lattice-ordered monoids}{chapter.6}% 294
+\BOOKMARK [1][-]{section.6.50}{50. CDILMon: Commutative distributive integral lattice-ordered monoids}{chapter.6}% 295
+\BOOKMARK [1][-]{section.6.51}{51. CDIdLSgrp: Commutative distributive idempotent lattice-ordered semigroups}{chapter.6}% 296
+\BOOKMARK [1][-]{section.6.52}{52. CDIdLMon: Commutative distributive idempotent lattice-ordered monoids}{chapter.6}% 297
+\BOOKMARK [1][-]{section.6.53}{53. CDDivLat: Commutative distributive division lattices}{chapter.6}% 298
+\BOOKMARK [1][-]{section.6.54}{54. CDRLMag: Commutative distributive residuated lattice-ordered magmas}{chapter.6}% 299
+\BOOKMARK [1][-]{section.6.55}{55. CDRLSgrp: Commutative distributive residuated lattice-ordered semigroups}{chapter.6}% 300
+\BOOKMARK [1][-]{section.6.56}{56. CDRL: Commutative distributive residuated lattices}{chapter.6}% 301
+\BOOKMARK [1][-]{section.6.57}{57. CDIRL: Commutative distributive integral residuated lattices}{chapter.6}% 302
+\BOOKMARK [1][-]{section.6.58}{58. CDIdRLSgrp: Commutative distributive idempotent residuated lattice-ordered semigroups}{chapter.6}% 303
+\BOOKMARK [1][-]{section.6.59}{59. CDIdRL: Commutative distributive idempotent residuated lattices}{chapter.6}% 304
+\BOOKMARK [1][-]{section.6.60}{60. CDInLMag: Commutative distributive involutive lattice-ordered magmas}{chapter.6}% 305
+\BOOKMARK [1][-]{section.6.61}{61. CDInLSgrp: Commutative distributive involutive lattice-ordered semigroups}{chapter.6}% 306
+\BOOKMARK [1][-]{section.6.62}{62. CDInFL: Commutative distributive involutive FL-algebras}{chapter.6}% 307
+\BOOKMARK [1][-]{section.6.63}{63. CDIInFL: Commutative distributive integral involutive FL-algebras}{chapter.6}% 308
+\BOOKMARK [1][-]{section.6.64}{64. AbLGrp: Abelian lattice-ordered groups}{chapter.6}% 309
+\BOOKMARK [1][-]{section.6.65}{65. GBL: Generalized BL-algebras}{chapter.6}% 310
+\BOOKMARK [1][-]{section.6.66}{66. GMV: Generalized MV-algebras}{chapter.6}% 311
+\BOOKMARK [1][-]{section.6.67}{67. psMV: Pseudo MV-algebras}{chapter.6}% 312
+\BOOKMARK [1][-]{section.6.68}{68. WaHp: Wajsberg hoops}{chapter.6}% 313
+\BOOKMARK [1][-]{section.6.69}{69. BrA: Brouwerian algebras}{chapter.6}% 314
+\BOOKMARK [1][-]{section.6.70}{70. GBA: Generalized Boolean algebras}{chapter.6}% 315
+\BOOKMARK [1][-]{section.6.71}{71. BoolLat: Boolean lattices}{chapter.6}% 316
+\BOOKMARK [1][-]{section.6.72}{72. CRSlSgrp: Commutative residuated semilinear semigroups}{chapter.6}% 317
+\BOOKMARK [1][-]{section.6.73}{73. CRSlMon: Commutative residuated semilinear monoids}{chapter.6}% 318
+\BOOKMARK [1][-]{section.6.74}{74. CIRSlMon: Commutative integral residuated semilinear monoids}{chapter.6}% 319
+\BOOKMARK [1][-]{section.6.75}{75. MTLA: Monoidal t-norm logic algebras}{chapter.6}% 320
+\BOOKMARK [1][-]{section.6.76}{76. BLA: Basic logic algebras}{chapter.6}% 321
+\BOOKMARK [1][-]{section.6.77}{77. MV: MV-algebras}{chapter.6}% 322
+\BOOKMARK [1][-]{section.6.78}{78. HA: Heyting algebras}{chapter.6}% 323
+\BOOKMARK [1][-]{section.6.79}{79. G\366dA: G\366del algebras}{chapter.6}% 324
+\BOOKMARK [1][-]{section.6.80}{80. CIdRSlSgrp: Commutative idempotent residuated semilinear semigroups}{chapter.6}% 325
+\BOOKMARK [1][-]{section.6.81}{81. CIdRSlMon: Commutative idempotent residuated semilinear monoids}{chapter.6}% 326
+\BOOKMARK [1][-]{section.6.82}{82. CInSlSgrp: Commutative involutive semilinear semigroups}{chapter.6}% 327
+\BOOKMARK [1][-]{section.6.83}{83. CInSlMon: Commutative involutive semilinear monoids}{chapter.6}% 328
+\BOOKMARK [1][-]{section.6.84}{84. DunnMon: Dunn monoid}{chapter.6}% 329
+\BOOKMARK [1][-]{section.6.85}{85. IMTL: Involutive monoidal t-norm logic algebras}{chapter.6}% 330
+\BOOKMARK [1][-]{section.6.86}{86. ImpLat: Implicative lattices}{chapter.6}% 331
+\BOOKMARK [1][-]{section.6.87}{87. KLA: Kleene logic algebras}{chapter.6}% 332
+\BOOKMARK [1][-]{section.6.88}{88. NVLGrp: Normal valued lattice-ordered groups}{chapter.6}% 333
+\BOOKMARK [1][-]{section.6.89}{89. LAn: Lukasiewicz algebras of order n}{chapter.6}% 334
+\BOOKMARK [1][-]{section.6.90}{90. LRng: Lattice-ordered rings}{chapter.6}% 335
+\BOOKMARK [1][-]{section.6.91}{91. CLRng: Commutative lattice-ordered rings}{chapter.6}% 336
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. Totally ordered algebras}{}% 337
+\BOOKMARK [1][-]{section.7.1}{1. ToLat: Totally ordered lattices}{chapter.7}% 338
+\BOOKMARK [1][-]{section.7.2}{2. pToLat: Pointed totally ordered lattices}{chapter.7}% 339
+\BOOKMARK [1][-]{section.7.3}{3. ToMag: Totally ordered magmas}{chapter.7}% 340
+\BOOKMARK [1][-]{section.7.4}{4. ToSgrp: Totally ordered semigroups}{chapter.7}% 341
+\BOOKMARK [1][-]{section.7.5}{5. ToMon: Totally ordered monoids}{chapter.7}% 342
+\BOOKMARK [1][-]{section.7.6}{6. IToMon: Integral totally ordered monoids}{chapter.7}% 343
+\BOOKMARK [1][-]{section.7.7}{7. IdToSgrp: Idempotent totally ordered semigroups}{chapter.7}% 344
+\BOOKMARK [1][-]{section.7.8}{8. IdToMon: Idempotent totally ordered monoids}{chapter.7}% 345
+\BOOKMARK [1][-]{section.7.9}{9. ToImpA: Totally ordered implication algebras}{chapter.7}% 346
+\BOOKMARK [1][-]{section.7.10}{10. LrToMag: Left-residuated totally ordered magmas}{chapter.7}% 347
+\BOOKMARK [1][-]{section.7.11}{11. LrToSgrp: Left-residuated totally ordered semigroups}{chapter.7}% 348
+\BOOKMARK [1][-]{section.7.12}{12. LrToMon: Left-residuated totally ordered monoids}{chapter.7}% 349
+\BOOKMARK [1][-]{section.7.13}{13. ILrToMon: Integral left-residuated totally ordered monoids}{chapter.7}% 350
+\BOOKMARK [1][-]{section.7.14}{14. IdLrToSgrp: Idempotent left-residuated totally ordered semigroups}{chapter.7}% 351
+\BOOKMARK [1][-]{section.7.15}{15. IdLrToMon: Idempotent left-residuated totally ordered monoids}{chapter.7}% 352
+\BOOKMARK [1][-]{section.7.16}{16. RToUn: Residuated totally-ordered unars}{chapter.7}% 353
+\BOOKMARK [1][-]{section.7.17}{17. ToDivLat: Totally ordered division lattices}{chapter.7}% 354
+\BOOKMARK [1][-]{section.7.18}{18. RToMag: Residuated totally ordered magmas}{chapter.7}% 355
+\BOOKMARK [1][-]{section.7.19}{19. RToSgrp: Residuated totally ordered semigroups}{chapter.7}% 356
+\BOOKMARK [1][-]{section.7.20}{20. RToMon: Residuated totally ordered monoids}{chapter.7}% 357
+\BOOKMARK [1][-]{section.7.21}{21. IRToMon: Integral residuated totally ordered monoids}{chapter.7}% 358
+\BOOKMARK [1][-]{section.7.22}{22. IdRToSgrp: Idempotent residuated totally ordered semigroups}{chapter.7}% 359
+\BOOKMARK [1][-]{section.7.23}{23. IdRToMon: Idempotent residuated totally ordered monoids}{chapter.7}% 360
+\BOOKMARK [1][-]{section.7.24}{24. ToUn: Totally ordered unars}{chapter.7}% 361
+\BOOKMARK [1][-]{section.7.25}{25. ToNUn: Totally ordered negated unars}{chapter.7}% 362
+\BOOKMARK [1][-]{section.7.26}{26. GalToLat: Galois chains}{chapter.7}% 363
+\BOOKMARK [1][-]{section.7.27}{27. InToLat: Involutive chains}{chapter.7}% 364
+\BOOKMARK [1][-]{section.7.28}{28. InToMag: Involutive totally ordered magmas}{chapter.7}% 365
+\BOOKMARK [1][-]{section.7.29}{29. InToSgrp: Involutive totally ordered semigroups}{chapter.7}% 366
+\BOOKMARK [1][-]{section.7.30}{30. InToMon: Involutive totally ordered monoids}{chapter.7}% 367
+\BOOKMARK [1][-]{section.7.31}{31. IInToMon: Integral involutive totally ordered monoids}{chapter.7}% 368
+\BOOKMARK [1][-]{section.7.32}{32. CyInToMag: Cyclic involutive totally ordered magmas}{chapter.7}% 369
+\BOOKMARK [1][-]{section.7.33}{33. CyInToSgrp: Cyclic involutive totally ordered semigroups}{chapter.7}% 370
+\BOOKMARK [1][-]{section.7.34}{34. CyInToMon: Cyclic involutive totally ordered monoids}{chapter.7}% 371
+\BOOKMARK [1][-]{section.7.35}{35. CyIInToMon: Cyclic integral involutive totally ordered monoids}{chapter.7}% 372
+\BOOKMARK [1][-]{section.7.36}{36. ToGrp: Totally ordered groups}{chapter.7}% 373
+\BOOKMARK [1][-]{section.7.37}{37. CToSgrp: Commutative totally ordered semigroups}{chapter.7}% 374
+\BOOKMARK [1][-]{section.7.38}{38. CToMon: Commutative totally ordered monoids}{chapter.7}% 375
+\BOOKMARK [1][-]{section.7.39}{39. CIToMon: Commutative integral totally ordered monoids}{chapter.7}% 376
+\BOOKMARK [1][-]{section.7.40}{40. CIdToSgrp: Commutative idempotent totally ordered semigroups}{chapter.7}% 377
+\BOOKMARK [1][-]{section.7.41}{41. CIdToMon: Commutative idempotent totally ordered monoids}{chapter.7}% 378
+\BOOKMARK [1][-]{section.7.42}{42. CToDivLat: Commutative division chains}{chapter.7}% 379
+\BOOKMARK [1][-]{section.7.43}{43. CRToMag: Commutative residuated totally ordered magmas}{chapter.7}% 380
+\BOOKMARK [1][-]{section.7.44}{44. CRToSgrp: Commutative residuated totally ordered semigroups}{chapter.7}% 381
+\BOOKMARK [1][-]{section.7.45}{45. CRToMon: Commutative residuated totally ordered monoids}{chapter.7}% 382
+\BOOKMARK [1][-]{section.7.46}{46. CIRToMon: Commutative integral residuated totally ordered monoids}{chapter.7}% 383
+\BOOKMARK [1][-]{section.7.47}{47. CIdRToSgrp: Commutative idempotent residuated totally ordered semigroups}{chapter.7}% 384
+\BOOKMARK [1][-]{section.7.48}{48. CIdRToMon: Commutative idempotent residuated totally ordered monoids}{chapter.7}% 385
+\BOOKMARK [1][-]{section.7.49}{49. CInToMag: Commutative involutive totally ordered magmas}{chapter.7}% 386
+\BOOKMARK [1][-]{section.7.50}{50. CInToSgrp: Commutative involutive totally ordered semigroups}{chapter.7}% 387
+\BOOKMARK [1][-]{section.7.51}{51. CInToMon: Commutative involutive totally ordered monoids}{chapter.7}% 388
+\BOOKMARK [1][-]{section.7.52}{52. IMTLChn: Involutive monoidal t-norm logic chains}{chapter.7}% 389
+\BOOKMARK [1][-]{section.7.53}{53. AbToGrp: Abelian totally ordered groups}{chapter.7}% 390
+\BOOKMARK [1][-]{section.7.54}{54. ToRng: Totally ordered rings}{chapter.7}% 391
+\BOOKMARK [1][-]{section.7.55}{55. CToRng: Commutative totally ordered rings}{chapter.7}% 392
+\BOOKMARK [1][-]{section.7.56}{56. ToFld: Totally ordered fields}{chapter.7}% 393
+\BOOKMARK [0][-]{chapter.8}{Chapter 8. Boolean-ordered algebras}{}% 394
+\BOOKMARK [1][-]{section.8.1}{1. BA: Boolean algebras}{chapter.8}% 395
+\BOOKMARK [1][-]{section.8.2}{2. pBA: Pointed Boolean algebras}{chapter.8}% 396
+\BOOKMARK [1][-]{section.8.3}{3. BUn: Boolean unars}{chapter.8}% 397
+\BOOKMARK [1][-]{section.8.4}{4. BNUn: Boolean negated unars}{chapter.8}% 398
+\BOOKMARK [1][-]{section.8.5}{5. MA: Modal algebras}{chapter.8}% 399
+\BOOKMARK [1][-]{section.8.6}{6. TA: Tense algebras}{chapter.8}% 400
+\BOOKMARK [1][-]{section.8.7}{7. MonA: Monadic algebras}{chapter.8}% 401
+\BOOKMARK [1][-]{section.8.8}{8. BMag: Boolean magmas}{chapter.8}% 402
+\BOOKMARK [1][-]{section.8.9}{9. BSgrp: Boolean semigroups}{chapter.8}% 403
+\BOOKMARK [1][-]{section.8.10}{10. BMon: Boolean monoids}{chapter.8}% 404
+\BOOKMARK [1][-]{section.8.11}{11. BIMon: Boolean integral monoids}{chapter.8}% 405
+\BOOKMARK [1][-]{section.8.12}{12. BIdSgrp: Boolean idempotent semigroups}{chapter.8}% 406
+\BOOKMARK [1][-]{section.8.13}{13. BIdMon: Boolean idempotent monoids}{chapter.8}% 407
+\BOOKMARK [1][-]{section.8.14}{14. BImpA: Boolean implication algebras}{chapter.8}% 408
+\BOOKMARK [1][-]{section.8.15}{15. BLrMag: Boolean left-residuated magmas}{chapter.8}% 409
+\BOOKMARK [1][-]{section.8.16}{16. BLrSgrp: Boolean left-residuated semigroups}{chapter.8}% 410
+\BOOKMARK [1][-]{section.8.17}{17. BLrMon: Boolean left-residuated monoids}{chapter.8}% 411
+\BOOKMARK [1][-]{section.8.18}{18. BILrMon: Boolean integral left-residuated monoids}{chapter.8}% 412
+\BOOKMARK [1][-]{section.8.19}{19. BIdLrSgrp: Boolean idempotent left-residuated semigroups}{chapter.8}% 413
+\BOOKMARK [1][-]{section.8.20}{20. BIdLrMon: Boolean idempotent left-residuated monoids}{chapter.8}% 414
+\BOOKMARK [1][-]{section.8.21}{21. BRUn: Boolean residuated unars}{chapter.8}% 415
+\BOOKMARK [1][-]{section.8.22}{22. BDivLat: Boolean division lattices}{chapter.8}% 416
+\BOOKMARK [1][-]{section.8.23}{23. BRMag: Boolean residuated magmas}{chapter.8}% 417
+\BOOKMARK [1][-]{section.8.24}{24. BRSgrp: Boolean residuated semigroups}{chapter.8}% 418
+\BOOKMARK [1][-]{section.8.25}{25. BRL: Boolean residuated lattices}{chapter.8}% 419
+\BOOKMARK [1][-]{section.8.26}{26. BIRL: Boolean integral residuated lattices}{chapter.8}% 420
+\BOOKMARK [1][-]{section.8.27}{27. BIdRSgrp: Boolean idempotent residuated semigroups}{chapter.8}% 421
+\BOOKMARK [1][-]{section.8.28}{28. BIdRL: Boolean idempotent residuated lattices}{chapter.8}% 422
+\BOOKMARK [1][-]{section.8.29}{29. BGalLat: Boolean Galois lattices}{chapter.8}% 423
+\BOOKMARK [1][-]{section.8.30}{30. BInLat: Boolean involutive lattices}{chapter.8}% 424
+\BOOKMARK [1][-]{section.8.31}{31. BInMag: Boolean involutive magmas}{chapter.8}% 425
+\BOOKMARK [1][-]{section.8.32}{32. BInSgrp: Boolean involutive semigroups}{chapter.8}% 426
+\BOOKMARK [1][-]{section.8.33}{33. BInFL: Boolean involutive FL-algebras}{chapter.8}% 427
+\BOOKMARK [1][-]{section.8.34}{34. BIInFL: Boolean integral involutive FL-algebras}{chapter.8}% 428
+\BOOKMARK [1][-]{section.8.35}{35. BCyInMag: Boolean cyclic involutive magmas}{chapter.8}% 429
+\BOOKMARK [1][-]{section.8.36}{36. BCyInSgrp: Boolean cyclic involutive semigroups}{chapter.8}% 430
+\BOOKMARK [1][-]{section.8.37}{37. BCyInFL: Boolean cyclic involutive FL-algebras}{chapter.8}% 431
+\BOOKMARK [1][-]{section.8.38}{38. BCyIInFL: Boolean cyclic involutive integral monoids}{chapter.8}% 432
+\BOOKMARK [1][-]{section.8.39}{39. BCSgrp: Boolean commutative semigroups}{chapter.8}% 433
+\BOOKMARK [1][-]{section.8.40}{40. BCMon: Boolean commutative monoids}{chapter.8}% 434
+\BOOKMARK [1][-]{section.8.41}{41. BCIMon: Boolean commutative integral monoids}{chapter.8}% 435
+\BOOKMARK [1][-]{section.8.42}{42. BSlat: Boolean semilattices}{chapter.8}% 436
+\BOOKMARK [1][-]{section.8.43}{43. BCIdSgrp: Boolean commutative idempotent semigroups}{chapter.8}% 437
+\BOOKMARK [1][-]{section.8.44}{44. BCIdMon: Boolean commutative idempotent monoids}{chapter.8}% 438
+\BOOKMARK [1][-]{section.8.45}{45. BCDivLat: Boolean commutative division lattices}{chapter.8}% 439
+\BOOKMARK [1][-]{section.8.46}{46. BCRMag: Boolean commutative residuated magmas}{chapter.8}% 440
+\BOOKMARK [1][-]{section.8.47}{47. BCRSgrp: Boolean commutative residuated semigroups}{chapter.8}% 441
+\BOOKMARK [1][-]{section.8.48}{48. BCRL: Boolean commutative residuated lattices}{chapter.8}% 442
+\BOOKMARK [1][-]{section.8.49}{49. BCIRL: Boolean commutative integral residuated lattices}{chapter.8}% 443
+\BOOKMARK [1][-]{section.8.50}{50. BCIdRSgrp: Boolean commutative idempotent residuated semigroups}{chapter.8}% 444
+\BOOKMARK [1][-]{section.8.51}{51. BCIdRL: Boolean commutative idempotent residuated lattices}{chapter.8}% 445
+\BOOKMARK [1][-]{section.8.52}{52. BCInMag: Boolean commutative involutive magmas}{chapter.8}% 446
+\BOOKMARK [1][-]{section.8.53}{53. BCInSgrp: Boolean commutative involutive semigroups}{chapter.8}% 447
+\BOOKMARK [1][-]{section.8.54}{54. BCInFL: Boolean commutative involutive FL-algebras}{chapter.8}% 448
+\BOOKMARK [1][-]{section.8.55}{55. BCIInFL: Boolean commutative integral involutive FL-algebras}{chapter.8}% 449
+\BOOKMARK [1][-]{section.8.56}{56. CA2: Cylindric algebras of dimension 2}{chapter.8}% 450
+\BOOKMARK [1][-]{section.8.57}{57. SeqA: Sequential algebras}{chapter.8}% 451
+\BOOKMARK [1][-]{section.8.58}{58. NA: Nonassociative relation algebras}{chapter.8}% 452
+\BOOKMARK [1][-]{section.8.59}{59. RA: Relation algebras}{chapter.8}% 453
+\BOOKMARK [1][-]{section.8.60}{60. IRA: Integral relation algebras}{chapter.8}% 454
+\BOOKMARK [1][-]{section.8.61}{61. BRMod: Boolean modules over a relation algebra}{chapter.8}% 455
+\BOOKMARK [0][-]{chapter.9}{Chapter 9. Unordered algebras}{}% 456
+\BOOKMARK [1][-]{section.9.1}{1. Set: The category of sets}{chapter.9}% 457
+\BOOKMARK [1][-]{section.9.2}{2. pSet: The category of pointed sets}{chapter.9}% 458
+\BOOKMARK [1][-]{section.9.3}{3. Unar: Unary Algebras}{chapter.9}% 459
+\BOOKMARK [1][-]{section.9.4}{4. AAlg: Associative algebras}{chapter.9}% 460
+\BOOKMARK [1][-]{section.9.5}{5. BCI: BCI-algebras}{chapter.9}% 461
+\BOOKMARK [1][-]{section.9.6}{6. RtQgrp: Right quasigroups}{chapter.9}% 462
+\BOOKMARK [1][-]{section.9.7}{7. Qgrp: Quasigroups}{chapter.9}% 463
+\BOOKMARK [1][-]{section.9.8}{8. MouQgrp: Moufang quasigroups}{chapter.9}% 464
+\BOOKMARK [1][-]{section.9.9}{9. Lp: Loops}{chapter.9}% 465
+\BOOKMARK [1][-]{section.9.10}{10. MouLp: Moufang loops}{chapter.9}% 466
+\BOOKMARK [1][-]{section.9.11}{11. Shell: Shells}{chapter.9}% 467
+\BOOKMARK [1][-]{section.9.12}{12. Mag: Magmas}{chapter.9}% 468
+\BOOKMARK [1][-]{section.9.13}{13. Bnd: Bands}{chapter.9}% 469
+\BOOKMARK [1][-]{section.9.14}{14. NBnd: Normal bands}{chapter.9}% 470
+\BOOKMARK [1][-]{section.9.15}{15. RecBnd: Rectangular bands}{chapter.9}% 471
+\BOOKMARK [1][-]{section.9.16}{16. SkLat: Skew lattices}{chapter.9}% 472
+\BOOKMARK [1][-]{section.9.17}{17. Sgrp: Semigroups}{chapter.9}% 473
+\BOOKMARK [1][-]{section.9.18}{18. Sgrp\1370: Semigroups with zero}{chapter.9}% 474
+\BOOKMARK [1][-]{section.9.19}{19. RegSgrp: Regular semigroups}{chapter.9}% 475
+\BOOKMARK [1][-]{section.9.20}{20. InvSgrp: Inverse semigroups}{chapter.9}% 476
+\BOOKMARK [1][-]{section.9.21}{21. Mon: Monoids}{chapter.9}% 477
+\BOOKMARK [1][-]{section.9.22}{22. CanSgrp: Cancellative semigroups}{chapter.9}% 478
+\BOOKMARK [1][-]{section.9.23}{23. CanMon: Cancellative monoids}{chapter.9}% 479
+\BOOKMARK [1][-]{section.9.24}{24. Grp: Groups}{chapter.9}% 480
+\BOOKMARK [1][-]{section.9.25}{25. AbpGrp: Abelian p-groups}{chapter.9}% 481
+\BOOKMARK [1][-]{section.9.26}{26. CMag: Commutative magmas}{chapter.9}% 482
+\BOOKMARK [1][-]{section.9.27}{27. CSgrp: Commutative semigroups}{chapter.9}% 483
+\BOOKMARK [1][-]{section.9.28}{28. LtCanSgrp: Left cancellative semigroups}{chapter.9}% 484
+\BOOKMARK [1][-]{section.9.29}{29. CanCSgrp: Cancellative commutative semigroups}{chapter.9}% 485
+\BOOKMARK [1][-]{section.9.30}{30. CInvSgrp: Commutative inverse semigroups}{chapter.9}% 486
+\BOOKMARK [1][-]{section.9.31}{31. CMon: Commutative monoids}{chapter.9}% 487
+\BOOKMARK [1][-]{section.9.32}{32. CanCMon: Cancellative commutative monoids}{chapter.9}% 488
+\BOOKMARK [1][-]{section.9.33}{33. AbGrp: Abelian groups}{chapter.9}% 489
+\BOOKMARK [1][-]{section.9.34}{34. BGrp: Boolean groups}{chapter.9}% 490
+\BOOKMARK [1][-]{section.9.35}{35. NFld: Near-fields}{chapter.9}% 491
+\BOOKMARK [1][-]{section.9.36}{36. NRng: Near-rings}{chapter.9}% 492
+\BOOKMARK [1][-]{section.9.37}{37. NRng\1371: Near-rings with identity}{chapter.9}% 493
+\BOOKMARK [1][-]{section.9.38}{38. Neofld: Neofields}{chapter.9}% 494
+\BOOKMARK [1][-]{section.9.39}{39. Srng: Semirings}{chapter.9}% 495
+\BOOKMARK [1][-]{section.9.40}{40. Srng\1371: Semirings with identity}{chapter.9}% 496
+\BOOKMARK [1][-]{section.9.41}{41. Srng\1370: Semirings with zero}{chapter.9}% 497
+\BOOKMARK [1][-]{section.9.42}{42. Srng\1370\1371: Semirings with identity and zero}{chapter.9}% 498
+\BOOKMARK [1][-]{section.9.43}{43. Rng: Rings}{chapter.9}% 499
+\BOOKMARK [1][-]{section.9.44}{44. Rng\1371: Rings with identity}{chapter.9}% 500
+\BOOKMARK [1][-]{section.9.45}{45. RegRng: Regular rings}{chapter.9}% 501
+\BOOKMARK [1][-]{section.9.46}{46. CRegRng: Commutative regular rings}{chapter.9}% 502
+\BOOKMARK [1][-]{section.9.47}{47. CSrng: Commutative semirings}{chapter.9}% 503
+\BOOKMARK [1][-]{section.9.48}{48. CSrng\1371: Commutative semirings with identity}{chapter.9}% 504
+\BOOKMARK [1][-]{section.9.49}{49. CSrng\1370: Commutative semirings with zero}{chapter.9}% 505
+\BOOKMARK [1][-]{section.9.50}{50. CSrng\1370\1371: Commutative semirings with identity and zero}{chapter.9}% 506
+\BOOKMARK [1][-]{section.9.51}{51. CRng: Commutative rings}{chapter.9}% 507
+\BOOKMARK [1][-]{section.9.52}{52. CRng\1371: Commutative rings with identity}{chapter.9}% 508
+\BOOKMARK [1][-]{section.9.53}{53. IntDom: Integral Domain}{chapter.9}% 509
+\BOOKMARK [1][-]{section.9.54}{54. DivRng: Division rings}{chapter.9}% 510
+\BOOKMARK [1][-]{section.9.55}{55. Sfld: Semifields}{chapter.9}% 511
+\BOOKMARK [1][-]{section.9.56}{56. Fld: Fields}{chapter.9}% 512
+\BOOKMARK [1][-]{section.9.57}{57. CnjMag: Conjugative magmas}{chapter.9}% 513
+\BOOKMARK [1][-]{section.9.58}{58. Dtoid: Directoids}{chapter.9}% 514
+\BOOKMARK [1][-]{section.9.59}{59. UFDom: Unique Factorization Domains}{chapter.9}% 515
+\BOOKMARK [1][-]{section.9.60}{60. OreDom: Ore domains}{chapter.9}% 516
+\BOOKMARK [1][-]{section.9.61}{61. PIDom: Principal Ideal Domain}{chapter.9}% 517
+\BOOKMARK [1][-]{section.9.62}{62. EucDom: Euclidean Domains}{chapter.9}% 518
+\BOOKMARK [1][-]{section.9.63}{63. Mset: M-sets}{chapter.9}% 519
+\BOOKMARK [1][-]{section.9.64}{64. Gset: G-sets}{chapter.9}% 520
+\BOOKMARK [1][-]{section.9.65}{65. RMod: Modules over a ring}{chapter.9}% 521
+\BOOKMARK [1][-]{section.9.66}{66. FVec: Vector spaces over a field}{chapter.9}% 522
+\BOOKMARK [1][-]{section.9.67}{67. JorA: Jordan algebras}{chapter.9}% 523
+\BOOKMARK [1][-]{section.9.68}{68. LNeofld: Left neofields}{chapter.9}% 524
+\BOOKMARK [1][-]{section.9.69}{69. BilinA: Bilinear algebras}{chapter.9}% 525
+\BOOKMARK [1][-]{section.9.70}{70. CliffSgrp: Clifford semigroups}{chapter.9}% 526
+\BOOKMARK [1][-]{section.9.71}{71. LieA: Lie algebras}{chapter.9}% 527
+\BOOKMARK [1][-]{section.9.72}{72. MedMag: Medial magmas}{chapter.9}% 528
+\BOOKMARK [1][-]{section.9.73}{73. NlGrp: Nilpotent groups}{chapter.9}% 529
+\BOOKMARK [1][-]{section.9.74}{74. NaA: Nonassociative algebras}{chapter.9}% 530
+\BOOKMARK [1][-]{section.9.75}{75. OrdA: Order algebras}{chapter.9}% 531
+\BOOKMARK [1][-]{section.9.76}{76. pGrp: P-groups}{chapter.9}% 532
+\BOOKMARK [1][-]{section.9.77}{77. Qnd: Quandles}{chapter.9}% 533
+\BOOKMARK [1][-]{section.9.78}{78. qMV: Quasi-MV-algebras}{chapter.9}% 534
+\BOOKMARK [1][-]{section.9.79}{79. sqMV: Sqrt-quasi-MV-algebras}{chapter.9}% 535
+\BOOKMARK [1][-]{section.9.80}{80. QtMag: Quasitrivial magmas}{chapter.9}% 536
+\BOOKMARK [1][-]{section.9.81}{81. TrivA: Trivial algebras}{chapter.9}% 537
+\BOOKMARK [0][-]{chapter*.2}{Appendix}{}% 538
+\BOOKMARK [0][-]{chapter*.3}{Bibliography}{}% 539
+\BOOKMARK [0][-]{chapter*.4}{Index}{}% 540
